@@ -30,6 +30,8 @@
 
 		<!-- Test -->
 		<junit.version>4.11</junit.version>
+		
+		<cxf.version>2.7.11</cxf.version>
 
 	</properties>
 	
@@ -86,8 +88,22 @@
         <dependency>
             <groupId>org.codehaus.jackson</groupId>
             <artifactId>jackson-mapper-asl</artifactId>
-            <version>1.9.10</version>
+            <version>1.9.13</version>
         </dependency>
+        
+        	<!-- Apache cxf -->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-jaxws</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
 		
 		<!-- Test Artifacts -->
 		<dependency>
