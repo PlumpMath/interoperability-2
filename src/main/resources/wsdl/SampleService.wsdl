@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="SampleService" targetNamespace="http://services.interoperability.wtf.org/" xmlns:ns1="http://services.interoperability.wtf.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+<xs:schema xmlns="http://services.interoperability.wtf.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://services.interoperability.wtf.org/">
+  <xs:complexType name="shop">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="staffName" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="getShop" nillable="true" type="xs:string"/>
+  <xs:element name="getShopResponse" nillable="true" type="shop"/>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getShopResponse">
+    <wsdl:part name="getShopResponse" element="ns1:getShopResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getShop">
+    <wsdl:part name="getShop" element="ns1:getShop">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="SampleService">
+    <wsdl:operation name="getShop">
+      <wsdl:input name="getShop" message="ns1:getShop">
+    </wsdl:input>
+      <wsdl:output name="getShopResponse" message="ns1:getShopResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
