@@ -10,7 +10,30 @@
          <context:component-scan
             base-package="org.springframework.samples.web"/>  -->
             
-             <context:component-scan base-package="org.wtf.interoperability.web.**" />
+             <bean class="org.wtf.interoperability.config.AppConfig"/>
+             
+            <context:component-scan base-package="org.wtf.interoperability.web.**" />
+
+			<context:annotation-config />
+			
+			<!-- Expose jndi, system and config properties to bean definitions. This expects a jndi or system property configDirectory 
+				to our directory of configuration files -->
+			<bean id="tutorialPropertyPlaceholderConfigurer" class="org.springframework.beans.factory.config.JndiAwarePropertyPlaceholderConfigurer">
+				<property name="locations">
+					<list>
+						<value>classpath*:org/**/TutorialDefaultPropertyPlaceholders.properties</value>
+						<value>file:${configDirectory}/TutorialDeploymentPropertyPlaceholders.properties</value>
+					</list>
+				</property>
+				<property name="ignoreResourceNotFound" value="false"/>
+				<property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
+				<property name="jndiSystemOrder" value="SYSTEM_FIRST"/>
+			</bean>
+		
+			<bean id="debug" class="java.lang.Boolean" scope="singleton">
+				<constructor-arg type="java.lang.String" value="${debug}" />
+			</bean>		
+			
 
 
     <mvc:annotation-driven />

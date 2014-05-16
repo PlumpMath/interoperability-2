@@ -7,6 +7,8 @@
     
  
          <context:component-scan
-            base-package="org.wtf.interoperability.services.impl"/>  
+            base-package="org.wtf.interoperability.services.impl"/> 
+            
+          
 
 </beans>

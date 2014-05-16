@@ -32,12 +32,21 @@
 		<junit.version>4.11</junit.version>
 		
 		<cxf.version>2.7.11</cxf.version>
+		
+		<commonsLangVersion>2.5</commonsLangVersion>
+		
+		<javaxInjectVersion>1</javaxInjectVersion>
 
 	</properties>
 	
 	<dependencies>
 	
 		<!-- Spring MVC -->
+		<dependency>
+			<groupId>javax.inject</groupId>
+			<artifactId>javax.inject</artifactId>
+			<version>${javaxInjectVersion}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
@@ -83,6 +92,19 @@
 			<version>${logback.version}</version>
 			<scope>runtime</scope>
 		</dependency>
+		
+		<!-- Apache Commons utilities -->		
+			<dependency>
+				<groupId>commons-lang</groupId>
+				<artifactId>commons-lang</artifactId>
+				<version>${commonsLangVersion}</version>
+				<exclusions>
+					<exclusion>
+						<artifactId>commons-logging</artifactId>
+						<groupId>commons-logging</groupId>
+					</exclusion>
+				</exclusions>
+			</dependency>
 
 		   <!-- Jackson JSON Mapper -->
         <dependency>
@@ -96,6 +118,12 @@
 			<groupId>org.apache.cxf</groupId>
 			<artifactId>cxf-rt-frontend-jaxws</artifactId>
 			<version>${cxf.version}</version>
+			<exclusions>
+					<exclusion>
+						<groupId>commons-logging</groupId>
+						<artifactId>commons-logging</artifactId>
+					</exclusion>
+				</exclusions>
 		</dependency>
 
 
@@ -103,6 +131,35 @@
 			<groupId>org.apache.cxf</groupId>
 			<artifactId>cxf-rt-transports-http</artifactId>
 			<version>${cxf.version}</version>
+			<exclusions>
+					<exclusion>
+						<groupId>commons-logging</groupId>
+						<artifactId>commons-logging</artifactId>
+					</exclusion>
+				</exclusions>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-ws-security</artifactId>
+			<version>${cxf.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-ws-policy</artifactId>
+			<version>${cxf.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		
 		<!-- Test Artifacts -->
@@ -122,7 +179,6 @@
 	</dependencies>	
 	<profiles>
 		<profile>
-
 			<id>openshift</id>
 			<build>
 				<finalName>interoperability</finalName>
@@ -143,6 +199,13 @@
 	
 	<build>
 		<finalName>interoperability</finalName>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+		
 		<plugins>
 			<plugin>
 				<artifactId>maven-war-plugin</artifactId>
@@ -154,6 +217,32 @@
 				</configuration>
 			</plugin>
 			
+			<plugin>
+               <groupId>org.codehaus.mojo</groupId>
+               <artifactId>jaxws-maven-plugin</artifactId>
+               <version>1.12</version>
+               <executions>
+                      <execution>
+                            <goals>
+                                   <goal>wsimport</goal>
+                            </goals>
+                      </execution>
+               </executions>
+		       <configuration>
+			       <packageName>org.wtf.interoperability.ws.vo</packageName>			        
+					<wsdlUrls>
+                      <wsdlUrl>${basedir}/src/main/resources/wsdl/TutorialService.wsdl</wsdlUrl>					
+					</wsdlUrls>
+					<sourceDestDir>${basedir}/src/main/java</sourceDestDir>
+			        <destDir>C:/EntornoSimon/ServiciosSimon/</destDir>
+			        <phase>generate-sources</phase> 
+			        <encoding>UTF-8</encoding>
+			        <extension>true</extension>
+		      </configuration>
+		   </plugin>
+		   
+			
+			<!-- 
 			<plugin>
 				<groupId>org.apache.cxf</groupId>
 				<artifactId>cxf-java2ws-plugin</artifactId>
@@ -170,7 +259,6 @@
 						<version>${cxf.version}</version>
 					</dependency>
 				</dependencies>
-
 				<executions>
 					<execution>
 						<id>process-classes</id>
@@ -190,7 +278,7 @@
 					</execution>
 				</executions>
 			</plugin>
-			
+			 -->
 			
 		</plugins>
 	</build>
