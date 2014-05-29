@@ -13,6 +13,7 @@ public class AppConfig {
 	
 	@Bean(name="object")
 	public Object object(){		
+		System.out.println(file);
 		return file;
 	}
 	

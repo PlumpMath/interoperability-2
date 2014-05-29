@@ -9,6 +9,6 @@
     <!-- Prevent Tomcat from trying to save and restore sessions when restarted. -->
     <Manager pathname=""/>
     <Environment name="configDirectory"
-    	value="C:/EntornoSimon/apache-tomcat-7.0.47/webapps/interoperability/WEB-INF/classes/spring/local"
+    	value="E:/java/git/jbossews/src/main/resources/spring/local"
     	type="java.lang.String" override="false"/>
 </Context>

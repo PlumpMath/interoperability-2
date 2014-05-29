@@ -217,6 +217,7 @@
 				</configuration>
 			</plugin>
 			
+			<!-- 
 			<plugin>
                <groupId>org.codehaus.mojo</groupId>
                <artifactId>jaxws-maven-plugin</artifactId>
@@ -240,7 +241,7 @@
 			        <extension>true</extension>
 		      </configuration>
 		   </plugin>
-		   
+		    -->
 			
 			<!-- 
 			<plugin>

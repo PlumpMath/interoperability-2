@@ -7,7 +7,11 @@
     
  
          <context:component-scan
-            base-package="org.wtf.interoperability.services.impl"/> 
+            base-package="org.wtf.interoperability.web*"/> 
+            
+         <context:component-scan base-package="org.wtf.interoperability.ws*" />
+         
+          <context:component-scan base-package="org.wtf.interoperability.services.impl*" />
             
           
 

@@ -13,9 +13,11 @@ clientkeypassword=aes2014
 clientstorepassword=aes2014
 clientkeystorename=src/test/resources/clientKeystore.jks
 
+#SHA256withRSA
+
 # Generate the server and client keys
-keytool -genkey -alias $serverkeyalias -keyalg RSA -sigalg SHA256withRSA -keypass $serverkeypassword -storepass $serverstorepassword -keystore $serverkeystorename -dname "cn=localhost" -validity 3650
-keytool -genkey -alias $clientkeyalias -keyalg RSA -sigalg SHA256withRSA -keypass $clientkeypassword -storepass $clientstorepassword -keystore $clientkeystorename -dname "cn=clientuser" -validity 3650
+keytool -genkey -alias $serverkeyalias -keyalg RSA  -storetype JKS  -sigalg SHA256withRSA -keypass $serverkeypassword -storepass $serverstorepassword -keystore $serverkeystorename -dname "cn=localhost" -validity 3650
+keytool -genkey -alias $clientkeyalias -keyalg RSA  -storetype JKS  -sigalg SHA256withRSA -keypass $clientkeypassword -storepass $clientstorepassword -keystore $clientkeystorename -dname "cn=clientuser" -validity 3650
 
 # Export the client key and import it to the server keystore
 keytool -export -rfc -keystore $clientkeystorename -storepass $clientstorepassword -alias $clientkeyalias -file $clientkeyalias.cer

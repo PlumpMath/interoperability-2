@@ -13,6 +13,7 @@
              <bean class="org.wtf.interoperability.config.AppConfig"/>
              
             <context:component-scan base-package="org.wtf.interoperability.web.**" />
+          
 
 			<context:annotation-config />
 			

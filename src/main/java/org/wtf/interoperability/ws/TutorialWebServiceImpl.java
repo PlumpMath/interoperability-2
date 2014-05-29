@@ -3,8 +3,6 @@
  */
 package org.wtf.interoperability.ws;
 
-import java.util.Calendar;
-
 import javax.inject.Named;
 import javax.jws.WebService;
 import javax.xml.ws.Holder;
@@ -22,7 +20,6 @@ import org.wtf.interoperability.ws.vo.SystemUnavailableFault;
 import org.wtf.interoperability.ws.vo.SystemUnavailableFaultMessage;
 import org.wtf.interoperability.ws.vo.TutorialRequest;
 import org.wtf.interoperability.ws.vo.TutorialResponse;
-import org.wtf.interoperability.ws.vo.TutorialWebService;
 
 /**
  * The implementation of the web-service interface generated from the WSDL.  Obviously this example is trivial, but
@@ -32,7 +29,7 @@ import org.wtf.interoperability.ws.vo.TutorialWebService;
  */
 @Named("TutorialWebService")
 @Scope(value = "singleton")
-@WebService(endpointInterface = "com.example.tutotial.TutorialWebService", targetNamespace = "http://example.com/tutotial/",
+@WebService(endpointInterface = "org.wtf.interoperability.ws.TutorialWebService", targetNamespace = "http://example.com/tutotial/",
         serviceName = "TutorialWebService", portName = "TutorialWebServiceSOAP" )
 public class TutorialWebServiceImpl implements TutorialWebService {
 	
@@ -51,14 +48,18 @@ public class TutorialWebServiceImpl implements TutorialWebService {
 		throw new RequiredHeaderMissingFault(message, faultInfo);
 	}
 	
-	/** 
-	 * {@inheritDoc}
-	 *
-	 * @see com.example.tutotial.TutorialWebService#sendTutorialMessage(com.example.tutotial.TutorialRequest, com.example.tutotial.MessageSource, javax.xml.ws.Holder, javax.xml.ws.Holder)
+	
+
+	
+	/*
+	 * (non-Javadoc)
+	 * @see org.wtf.interoperability.ws.vo.TutorialWebService#sendTutorialMessage(org.wtf.interoperability.ws.vo.TutorialRequest, org.wtf.interoperability.ws.vo.MessageSource, javax.xml.ws.Holder, javax.xml.ws.Holder)
 	 */
 	@Override
-	public void sendTutorialMessage(TutorialRequest parameters, MessageSource source, Holder<TutorialResponse> response,
-			Holder<MessageAcknowledgment> acknowledgment) throws RequiredHeaderMissingFault, SystemUnavailableFault {
+	public void sendTutorialMessage(TutorialRequest parameters,
+			MessageSource source, Holder<TutorialResponse> response,
+			Holder<MessageAcknowledgment> acknowledgment)
+			throws RequiredHeaderMissingFault, SystemUnavailableFault {
 		log.info("Received request message: {}", parameters.getRequestStructure());
 		if (source == null) {
 			throwRequiredHeaderFault("Source cannot be null.", "source");
@@ -78,23 +79,13 @@ public class TutorialWebServiceImpl implements TutorialWebService {
 		ResponseStructure responseStructure = new ResponseStructure();
 		responseStructure.setResponseCode("00000");
 		responseStructure.setResponseMessage("SUCCESS!");
-		responseStructure.setServerDate(Calendar.getInstance());
+		//responseStructure.setServerDate(Calendar.getInstance());
 		responseMessage.setResponseStructure(responseStructure);
 		response.value = responseMessage;
 		
 		MessageAcknowledgment acknowledgmentMessage = new MessageAcknowledgment();
 		acknowledgmentMessage.setSomeMessage("WE ACKNOWLEDGE!");
 		acknowledgment.value = acknowledgmentMessage;
-	}
-
-
-
-	public void sendTutorialMessage(TutorialRequest parameters,
-			MessageSource source, Holder<TutorialResponse> response,
-			Holder<MessageAcknowledgment> acknowledgment)
-			throws RequiredHeaderMissingFault, SystemUnavailableFault {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

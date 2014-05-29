@@ -1,5 +1,5 @@
 
-package org.wtf.interoperability.ws.vo;
+package org.wtf.interoperability.ws;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -7,6 +7,14 @@ import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.ws.Holder;
+
+import org.wtf.interoperability.ws.vo.MessageAcknowledgment;
+import org.wtf.interoperability.ws.vo.MessageSource;
+import org.wtf.interoperability.ws.vo.ObjectFactory;
+import org.wtf.interoperability.ws.vo.RequiredHeaderMissingFault;
+import org.wtf.interoperability.ws.vo.SystemUnavailableFault;
+import org.wtf.interoperability.ws.vo.TutorialRequest;
+import org.wtf.interoperability.ws.vo.TutorialResponse;
 
 
 /**
