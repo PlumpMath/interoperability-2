@@ -36,6 +36,8 @@
 		<commonsLangVersion>2.5</commonsLangVersion>
 		
 		<javaxInjectVersion>1</javaxInjectVersion>
+		
+		<testNgVersion>5.14.2</testNgVersion>
 
 	</properties>
 	
@@ -175,6 +177,13 @@
 			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
+		
+		<!-- Test dependencies of various kinds -->
+			<dependency>
+				<groupId>org.testng</groupId>
+				<artifactId>testng</artifactId>
+				<version>${testNgVersion}</version>
+			</dependency>
 
 	</dependencies>	
 	<profiles>

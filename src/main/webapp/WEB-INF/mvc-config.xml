@@ -23,7 +23,7 @@
 				<property name="locations">
 					<list>
 						<value>classpath*:org/**/TutorialDefaultPropertyPlaceholders.properties</value>
-						<value>file:${configDirectory}/TutorialDeploymentPropertyPlaceholders.properties</value>
+						<value>file:C:/EntornoSimon/git/interoperability/src/main/resources/spring/local/TutorialDeploymentPropertyPlaceholders.properties</value>
 					</list>
 				</property>
 				<property name="ignoreResourceNotFound" value="false"/>
