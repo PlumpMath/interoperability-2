@@ -18,7 +18,13 @@ See here for more details: http://gordondickens.com/wordpress/2013/03/27/sawing-
 
 	<!--<logger name="org.hibernate" level="debug"/> -->
    <!-- Uncomment and add your logger here:-->
-    <logger name="org.apache.cxf" level="debug"/>
+     <logger name="org.springframework" level="DEBUG" />
+    <logger name="org.springframework.beans.factory.config" level="DEBUG" />
+    <logger name="org.springframework.web.context.request.FacesRequestAttributes" level="DEBUG" />
+    <logger name="org.springframework.beans.factory.config.JndiAwarePropertyPlaceholderConfigurer" level="DEBUG" />
+    <logger name="org.apache.cxf.interceptor.LoggingInInterceptor" level="DEBUG" />
+    <logger name="org.apache.cxf.interceptor.LoggingOutInterceptor" level="DEBUG" />
+    <logger name="org.apache.cxf.interceptor.AbstractLoggingInterceptor" level="DEBUG" />
          
     <root level="debug">
         <appender-ref ref="console"/>

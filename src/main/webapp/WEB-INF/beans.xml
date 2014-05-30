@@ -65,6 +65,7 @@ http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 			<entry key="ws-security.signature.properties" value-ref="keystoreProperties"/>
 			<entry key="ws-security.encryption.username" value="useReqSigCert"/>
 			<entry key="schema-validation-enabled" value="true" />
+			<entry key="ws-security.is-bsp-compliant" value="false"/>
 		</jaxws:properties>
 
 		<jaxws:inInterceptors>

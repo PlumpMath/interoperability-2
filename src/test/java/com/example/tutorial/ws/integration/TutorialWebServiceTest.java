@@ -3,7 +3,6 @@
  */
 package com.example.tutorial.ws.integration;
 
-import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.UUID;
 

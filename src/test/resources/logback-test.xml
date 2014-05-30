@@ -41,13 +41,13 @@
     </appender>
     -->
 
-    <logger name="org.springframework" level="WARN" />
-    <logger name="org.springframework.beans.factory.config" level="INFO" />
-    <logger name="org.springframework.web.context.request.FacesRequestAttributes" level="ERROR" />
+    <logger name="org.springframework" level="DEBUG" />
+    <logger name="org.springframework.beans.factory.config" level="DEBUG" />
+    <logger name="org.springframework.web.context.request.FacesRequestAttributes" level="DEBUG" />
     <logger name="org.springframework.beans.factory.config.JndiAwarePropertyPlaceholderConfigurer" level="DEBUG" />
-    <logger name="org.apache.cxf.interceptor.LoggingInInterceptor" level="INFO" />
-    <logger name="org.apache.cxf.interceptor.LoggingOutInterceptor" level="INFO" />
-    <logger name="org.apache.cxf.interceptor.AbstractLoggingInterceptor" level="INFO" />
+    <logger name="org.apache.cxf.interceptor.LoggingInInterceptor" level="DEBUG" />
+    <logger name="org.apache.cxf.interceptor.LoggingOutInterceptor" level="DEBUG" />
+    <logger name="org.apache.cxf.interceptor.AbstractLoggingInterceptor" level="DEBUG" />
     
     <root level="INFO">
         <appender-ref ref="STDOUT" />
