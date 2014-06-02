@@ -1,0 +1,52 @@
+<wsdl:definitions name="CardFraudulent" targetNamespace="http://com/aes/service/accounts/CardFraudulent" 
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pref="http://www.aes.com/xs/modelo"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://com/aes/service/accounts/CardFraudulent" 
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <wsdl:types>
+      <xsd:schema targetNamespace="http://com/aes/service/accounts/CardFraudulent" 
+      xmlns:mrm="http://com/aes/service/accounts/CardFraudulent" xmlns:toures="http://www.aes.com/xs/modelo">
+         <xsd:import namespace="http://www.aes.com/xs/modelo" schemaLocation="../xsd/CardStatusMod.xsd"/>
+         <xsd:element name="modCardStatusRequest" type="mrm:ModCardStatusInput"/>
+         <xsd:element name="modCardStatusResponse" type="mrm:ModCardStatusOutput"/>
+         <xsd:complexType name="ModCardStatusInput">
+            <xsd:sequence>
+               <xsd:element ref="toures:ModCardStatusInp"/>
+            </xsd:sequence>
+         </xsd:complexType>
+         <xsd:complexType name="ModCardStatusOutput">
+            <xsd:sequence>
+               <xsd:element ref="toures:ModCardStatusOut"/>
+            </xsd:sequence>
+         </xsd:complexType>
+      </xsd:schema>
+   </wsdl:types>
+   <wsdl:message name="modCardStatusRequest">
+      <wsdl:part element="tns:modCardStatusRequest" name="modCardStatusRequest"/>
+   </wsdl:message>
+   <wsdl:message name="modCardStatusResponse">
+      <wsdl:part element="tns:modCardStatusResponse" name="modCardStatusResponse"/>
+   </wsdl:message>
+   <wsdl:portType name="CardFraudulent">
+      <wsdl:operation name="report">
+         <wsdl:input message="tns:modCardStatusRequest"/>
+         <wsdl:output message="tns:modCardStatusResponse"/>
+      </wsdl:operation>
+   </wsdl:portType>
+   <wsdl:binding name="CardFraudulentBinding" type="tns:CardFraudulent">
+      <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+      <wsdl:operation name="report">
+         <soap:operation soapAction=""/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:service name="CardFraudulentService">
+      <wsdl:port binding="tns:CardFraudulentBinding" name="CardFraudulentPort">
+         <soap:address location="http://localhost:7800/Accounts/CardFraudulent"/>
+      </wsdl:port>
+   </wsdl:service>
+</wsdl:definitions>

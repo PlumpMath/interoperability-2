@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://www.aes.com/xs/modelo" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+ xmlns:ns1="http://www.aes.com/xs/modelo">
+   <xs:simpleType name="NC">
+      <xs:restriction base="xs:string"/>
+   </xs:simpleType>
+   <xs:simpleType name="UUID">
+      <xs:restriction base="ns1:NC">
+         <xs:maxLength value="36"/>
+         <xs:pattern value="([0-9]|[a-f]|[A-F]){8}(-([0-9]|[a-f]|[A-F]){4})(-([0-9]|[a-f]|[A-F]){4})(-([0-9]|[a-f]|[A-F]){4})(-([0-9]|[a-f]|[A-F]){12})"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="DateTime">
+      <xs:restriction base="xs:string">
+         <xs:pattern value="[0-9]{4}-[0-9]{2}-[0-9]{2}(T[0-9]{2}:[0-9]{2}:[0-9]{2}(.[0-9]{6})?(-[0-9]{2}:[0-9]{2})?)?"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="C">
+      <xs:restriction base="xs:string"/>
+   </xs:simpleType>
+   <xs:simpleType name="ClosedEnum">
+      <xs:restriction base="xs:string"/>
+   </xs:simpleType>
+   <xs:simpleType name="OpenEnum">
+      <xs:restriction base="xs:string"/>
+   </xs:simpleType>
+   <xs:element name="RqUID" type="ns1:RqUID_Type"/>
+   <xs:simpleType name="RqUID_Type">
+      <xs:restriction base="ns1:UUID"/>
+   </xs:simpleType>
+   <xs:element name="MsgRqHdr" type="ns1:MsgRqHdr_Type"/>
+   <xs:complexType name="MsgRqHdr_Type">
+      <xs:sequence>
+         <xs:element ref="ns1:ContextRqHdr"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="ContextRqHdr" type="ns1:ContextRqHdr_Type"/>
+   <xs:complexType name="ContextRqHdr_Type">
+      <xs:sequence>
+         <xs:element ref="ns1:ClientDt"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="ClientDt" type="ns1:ClientDt_Type"/>
+   <xs:simpleType name="ClientDt_Type">
+      <xs:restriction base="ns1:DateTime"/>
+   </xs:simpleType>
+   <xs:element name="Status" type="ns1:Status_Type"/>
+   <xs:complexType name="Status_Type">
+      <xs:sequence>
+         <xs:element ref="ns1:StatusCode"/>
+         <xs:element ref="ns1:ServerStatusCode" minOccurs="0"/>
+         <xs:element ref="ns1:Severity"/>
+         <xs:element ref="ns1:StatusDesc" minOccurs="0"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="StatusCode" type="ns1:StatusCode_Type"/>
+  <xs:simpleType name="StatusCode_Type">
+    <xs:restriction base="ns1:Long" />
+  </xs:simpleType>
+   <xs:simpleType name="Long">
+    <xs:restriction base="xs:long" />
+  </xs:simpleType>
+   <xs:element name="ServerStatusCode" type="ns1:ServerStatusCode_Type"/>
+   <xs:simpleType name="ServerStatusCode_Type">
+      <xs:restriction base="ns1:C">
+         <xs:maxLength value="20"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:element name="Severity" type="ns1:Severity_Type"/>
+   <xs:simpleType name="Severity_Type">
+      <xs:restriction base="ns1:ClosedEnum"/>
+   </xs:simpleType>
+   <xs:element name="StatusDesc" type="ns1:StatusDesc_Type"/>
+   <xs:simpleType name="StatusDesc_Type">
+      <xs:restriction base="ns1:C">
+         <xs:maxLength value="255"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:element name="CardSel" type="ns1:CardSel_Type"/>
+   <xs:complexType name="CardSel_Type">
+      <xs:sequence>
+         <xs:element ref="ns1:CardKeys" minOccurs="1" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="CardKeys" type="ns1:CardKeys_Type"/>
+   <xs:complexType name="CardKeys_Type">
+      <xs:sequence>
+         <xs:element ref="ns1:CardNum"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="CardNum" type="ns1:CardNum_Type"/>
+   <xs:simpleType name="CardNum_Type">
+      <xs:restriction base="ns1:NC">
+         <xs:maxLength value="32"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:element name="CardStatusRec" type="ns1:CardStatusRec_Type"/>
+   <xs:complexType name="CardStatusRec_Type">
+      <xs:sequence>
+         <xs:element ref="ns1:CardNum" minOccurs="1"/>
+		 <xs:element ref="ns1:CardStatus" minOccurs="1"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="CardStatus" type="ns1:CardStatus_Type"/>
+   <xs:complexType name="CardStatus_Type">
+      <xs:sequence>
+         <xs:element ref="ns1:CardStatusCode" minOccurs="0"/>
+		 <xs:element ref="ns1:StatusDesc" minOccurs="0"/>
+		 <xs:element ref="ns1:CardStatusAction" minOccurs="0"/>
+		 <xs:element ref="ns1:StatusReason" minOccurs="0"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="CardStatusCode" type="ns1:CardStatusCode_Type"/>
+   <xs:simpleType name="CardStatusCode_Type">
+      <xs:restriction base="ns1:OpenEnum"/>
+   </xs:simpleType>
+   <xs:element name="CardStatusAction" type="ns1:CardStatusAction_Type"/>
+   <xs:simpleType name="CardStatusAction_Type">
+		<xs:restriction base="ns1:OpenEnum"/>
+   </xs:simpleType>
+   <xs:element name="StatusReason" type="ns1:StatusReason_Type"/>
+   <xs:simpleType name="StatusReason_Type">
+	  <xs:restriction base="ns1:C">
+         <xs:maxLength value="80"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:element name="CustId" type="ns1:CustId_Type"/>
+   <xs:complexType name="CustId_Type">
+      <xs:sequence>
+         <xs:element ref="ns1:GovIssueIdent" minOccurs="1"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="GovIssueIdent" type="ns1:GovIssueIdent_Type"/>
+   <xs:complexType name="GovIssueIdent_Type">
+      <xs:sequence>
+         <xs:element ref="ns1:GovIssueIdentType" minOccurs="1"/>
+		 <xs:element ref="ns1:IdentSerialNum" minOccurs="1"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="GovIssueIdentType" type="ns1:GovIssueIdentType_Type"/>
+   <xs:simpleType name="GovIssueIdentType_Type">
+		<xs:restriction base="ns1:OpenEnum"/>
+   </xs:simpleType>
+   <xs:element name="IdentSerialNum" type="ns1:IdentSerialNum_Type"/>
+   <xs:simpleType name="IdentSerialNum_Type">
+      <xs:restriction base="ns1:NC">
+         <xs:maxLength value="32"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:element name="AcctTrnSel" type="ns1:AcctTrnSel_Type"/>
+   <xs:complexType name="AcctTrnSel_Type">
+      <xs:sequence>
+         <xs:element ref="ns1:DtRange" minOccurs="1"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="DtRange" type="ns1:DtRange_Type"/>
+   <xs:complexType name="DtRange_Type">
+      <xs:sequence>
+         <xs:element ref="ns1:StartDt" minOccurs="1"/>
+		 <xs:element ref="ns1:EndDt" minOccurs="1"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="StartDt" type="ns1:StartDt_Type"/>
+   <xs:simpleType name="StartDt_Type">
+      <xs:restriction base="ns1:Date"/>
+   </xs:simpleType>
+   <xs:element name="EndDt" type="ns1:EndDt_Type"/>
+   <xs:simpleType name="EndDt_Type">
+      <xs:restriction base="ns1:Date"/>
+   </xs:simpleType>
+   <xs:simpleType name="Date">
+    <xs:restriction base="xs:date" />
+   </xs:simpleType> 
+   <xs:element name="AcctTrnRec" type="ns1:AcctTrnRec_Type"/>
+   <xs:complexType name="AcctTrnRec_Type">
+      <xs:sequence>
+         <xs:element ref="ns1:AcctTrnInfo" minOccurs="1"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="AcctTrnInfo" type="ns1:AcctTrnInfo_Type"/>
+   <xs:complexType name="AcctTrnInfo_Type">
+      <xs:sequence>
+         <xs:element ref="ns1:AcctRec" minOccurs="0"/>
+		 <xs:element ref="ns1:OrigDt" minOccurs="0"/>
+		 <xs:element ref="ns1:TotalCurAmt" minOccurs="0"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="AcctRec" type="ns1:AcctRec_Type"/>
+      <xs:complexType name="AcctRec_Type">
+      <xs:sequence>
+         <xs:element ref="ns1:CardNum" minOccurs="1"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="OrigDt" type="ns1:OrigDt_Type"/>
+   <xs:simpleType name="OrigDt_Type">
+      <xs:restriction base="ns1:DateTime"/>
+   </xs:simpleType>
+   <xs:element name="TotalCurAmt" type="ns1:TotalCurAmt_Type"/>
+      <xs:complexType name="TotalCurAmt_Type">
+      <xs:sequence>
+         <xs:element ref="ns1:Amt" minOccurs="1"/>
+		 <xs:element ref="ns1:CurCode" minOccurs="1"/>
+      </xs:sequence>
+   </xs:complexType>
+     <xs:element name="Amt" type="ns1:Amt_Type" />
+  <xs:simpleType name="Amt_Type">
+    <xs:restriction base="ns1:Decimal" />
+  </xs:simpleType>
+   <xs:simpleType name="Decimal">
+    <xs:restriction base="xs:decimal" />
+  </xs:simpleType>
+  <xs:element name="CurCode" type="ns1:CurCode_Type" />
+  <xs:simpleType name="CurCode_Type">
+    <xs:restriction base="ns1:NC">
+      <xs:maxLength value="3" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

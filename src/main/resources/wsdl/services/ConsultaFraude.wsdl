@@ -1,0 +1,48 @@
+<wsdl:definitions name="CardStatusInquiry" targetNamespace="http://com/aes/service/accounts/CardStatusInquiry" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pref="http://www.aes.com/xs/modelo" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://com/aes/service/accounts/CardStatusInquiry" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <wsdl:types>
+      <xsd:schema targetNamespace="http://com/aes/service/accounts/CardStatusInquiry" xmlns:mrm="http://com/aes/service/accounts/CardStatusInquiry" xmlns:toures="http://www.aes.com/xs/modelo">
+         <xsd:import namespace="http://www.aes.com/xs/modelo" schemaLocation="../xsd/CardStatusInq.xsd"/>
+         <xsd:element name="getCardStatusRequest" type="mrm:GetCardStatusInp"/>
+         <xsd:element name="getCardStatusResponse" type="mrm:GetCardStatusOut"/>
+         <xsd:complexType name="GetCardStatusInp">
+            <xsd:sequence>
+               <xsd:element ref="toures:GetCardStatusInp"/>
+            </xsd:sequence>
+         </xsd:complexType>
+         <xsd:complexType name="GetCardStatusOut">
+            <xsd:sequence>
+               <xsd:element ref="toures:GetCardStatusOut"/>
+            </xsd:sequence>
+         </xsd:complexType>
+      </xsd:schema>
+   </wsdl:types>
+   <wsdl:message name="getCardStatusRequest">
+      <wsdl:part element="tns:getCardStatusRequest" name="getCardStatusRequest"/>
+   </wsdl:message>
+   <wsdl:message name="getCardStatusResponse">
+      <wsdl:part element="tns:getCardStatusResponse" name="getCardStatusResponse"/>
+   </wsdl:message>
+   <wsdl:portType name="CardStatusInquiry">
+      <wsdl:operation name="getCardStatus">
+         <wsdl:input message="tns:getCardStatusRequest"/>
+         <wsdl:output message="tns:getCardStatusResponse"/>
+      </wsdl:operation>
+   </wsdl:portType>
+   <wsdl:binding name="CardStatusInquiryBinding" type="tns:CardStatusInquiry">
+      <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+      <wsdl:operation name="getCardStatus">
+         <soap:operation soapAction=""/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:service name="CardStatusInquiryService">
+      <wsdl:port binding="tns:CardStatusInquiryBinding" name="CardStatusInquiryPort">
+         <soap:address location="http://localhost:7800/Accounts/CardStatusInquiry"/>
+      </wsdl:port>
+   </wsdl:service>
+</wsdl:definitions>

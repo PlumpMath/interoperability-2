@@ -1,0 +1,33 @@
+<xsd:schema targetNamespace="http://www.aes.com/xs/modelo" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.aes.com/xs/modelo">
+   <xsd:include schemaLocation="Basic.xsd"/>
+   <xsd:element name="GetCardStatusInp">
+      <xsd:complexType>
+         <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="CardStatusInqRq"/>
+         </xsd:sequence>
+      </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="CardStatusInqRq" type="CardStatusInqRq_Type"/>
+   <xsd:complexType name="CardStatusInqRq_Type">
+      <xsd:sequence>
+         <xsd:element ref="RqUID" minOccurs="1"/>
+		 <xsd:element ref="MsgRqHdr" minOccurs="1"/>
+		 <xsd:element ref="CardSel" minOccurs="1"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="GetCardStatusOut">
+      <xsd:complexType>
+         <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="CardStatusInqRs"/>
+         </xsd:sequence>
+      </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="CardStatusInqRs" type="CardStatusInqRs_Type"/>
+   <xsd:complexType name="CardStatusInqRs_Type">
+      <xsd:sequence>
+         <xsd:element ref="Status" minOccurs="1"/>
+		 <xsd:element ref="RqUID" minOccurs="1"/>
+		 <xsd:element ref="CardStatusRec" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+   </xsd:complexType>
+</xsd:schema>

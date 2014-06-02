@@ -1,0 +1,33 @@
+<xsd:schema targetNamespace="http://www.aes.com/xs/modelo" xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+ xmlns:ns1="http://www.aes.com/xs/modelo">
+   <xsd:include schemaLocation="Basic.xsd"/>
+   <xsd:element name="ModCardStatusInp">
+      <xsd:complexType>
+         <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="ns1:CardStatusModRq"/>
+         </xsd:sequence>
+      </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="CardStatusModRq" type="ns1:CardStatusModRq_Type"/>
+   <xsd:complexType name="CardStatusModRq_Type">
+      <xsd:sequence>
+         <xsd:element ref="ns1:RqUID" minOccurs="1"/>
+		 <xsd:element ref="ns1:MsgRqHdr" minOccurs="1"/>
+		 <xsd:element ref="ns1:CardStatusRec" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="ModCardStatusOut">
+      <xsd:complexType>
+         <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="ns1:CardStatusModRs"/>
+         </xsd:sequence>
+      </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="CardStatusModRs" type="ns1:CardStatusModRs_Type"/>
+   <xsd:complexType name="CardStatusModRs_Type">
+      <xsd:sequence>
+         <xsd:element ref="ns1:Status" minOccurs="1"/>
+		 <xsd:element ref="ns1:RqUID" minOccurs="1"/>
+      </xsd:sequence>
+   </xsd:complexType>
+</xsd:schema>
