@@ -9,10 +9,13 @@
          <context:component-scan
             base-package="org.wtf.interoperability.web*"/> 
             
+             <context:component-scan base-package="com.aes.service.accounts*" />
+            
+            <!-- 
          <context:component-scan base-package="org.wtf.interoperability.ws*" />
          
           <context:component-scan base-package="org.wtf.interoperability.services.impl*" />
             
-          
+           -->
 
 </beans>

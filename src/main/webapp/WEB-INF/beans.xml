@@ -27,7 +27,14 @@ http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 	<import resource="classpath:META-INF/cxf/cxf-extension-policy.xml" />
 	<import resource="classpath:META-INF/cxf/cxf-extension-ws-security.xml" />
 	
-	 
+	<jaxws:endpoint implementor="#cardFraudulentService"
+		address="/CardFraudulentService">
+		<jaxws:binding>
+			<soap:soapBinding style="document" use="literal" version="1.2" />
+		</jaxws:binding>
+	</jaxws:endpoint>
+	
+	 <!-- 
 	<bean id="keystorePasswordCallback" class="org.wtf.interoperability.ws.security.KeystorePasswordCallback">
 		<property name="passwords">
 			<map>
@@ -41,8 +48,8 @@ http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 		<prop key="org.apache.ws.security.crypto.merlin.keystore.type">jks</prop>
 		<prop key="org.apache.ws.security.crypto.merlin.keystore.password">aes2014</prop>
 		<prop key="org.apache.ws.security.crypto.merlin.keystore.alias">myservicekey</prop>
-		<prop key="org.apache.ws.security.crypto.merlin.file">C:/EntornoSimon/git/interoperability/src/main/resources/spring/local/serviceKeystore.jks</prop>
-		<prop key="org.apache.ws.security.crypto.merlin.truststore.file">C:/EntornoSimon/git/interoperability/src/main/resources/spring/local/serviceKeystore.jks</prop>
+		<prop key="org.apache.ws.security.crypto.merlin.file">E:/java/git/jbossews/src/main/resources/spring/local/serviceKeystore.jks</prop>
+		<prop key="org.apache.ws.security.crypto.merlin.truststore.file">E:/java/git/jbossews/src/main/resources/spring/local/serviceKeystore.jks</prop>
 		<prop key="org.apache.ws.security.crypto.merlin.truststore.password">aes2014</prop>
 		<prop key="org.apache.ws.security.crypto.merlin.truststore.type">jks</prop>
 	</util:properties>
@@ -76,5 +83,7 @@ http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 			<bean class="org.apache.cxf.interceptor.LoggingOutInterceptor"/>
 		</jaxws:outInterceptors>
 	</jaxws:endpoint>
+	
+	 -->
 	
 </beans>

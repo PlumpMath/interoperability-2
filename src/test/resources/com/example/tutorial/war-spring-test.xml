@@ -45,8 +45,8 @@
 		<prop key="org.apache.ws.security.crypto.merlin.keystore.type">jks</prop>
 		<prop key="org.apache.ws.security.crypto.merlin.keystore.password">aes2014</prop>
 		<prop key="org.apache.ws.security.crypto.merlin.keystore.alias">myclientkey</prop>
-		<prop key="org.apache.ws.security.crypto.merlin.file">C:/EntornoSimon/git/interoperability/src/test/resources/clientKeystore.jks</prop>
-		<prop key="org.apache.ws.security.crypto.merlin.truststore.file">C:/EntornoSimon/git/interoperability/src/test/resources/clientKeystore.jks</prop>
+		<prop key="org.apache.ws.security.crypto.merlin.file">E:/java/git/jbossews/src/test/resources/clientKeystore.jks</prop>
+		<prop key="org.apache.ws.security.crypto.merlin.truststore.file">E:/java/git/jbossews/src/test/resources/clientKeystore.jks</prop>
 		<prop key="org.apache.ws.security.crypto.merlin.truststore.password">aes2014</prop>
 		<prop key="org.apache.ws.security.crypto.merlin.truststore.type">jks</prop>
 	</util:properties>

@@ -17,13 +17,17 @@
 
 			<context:annotation-config />
 			
+			
+    		<mvc:annotation-driven />
+			
+			
 			<!-- Expose jndi, system and config properties to bean definitions. This expects a jndi or system property configDirectory 
-				to our directory of configuration files -->
+				to our directory of configuration files
 			<bean id="tutorialPropertyPlaceholderConfigurer" class="org.springframework.beans.factory.config.JndiAwarePropertyPlaceholderConfigurer">
 				<property name="locations">
 					<list>
 						<value>classpath*:org/**/TutorialDefaultPropertyPlaceholders.properties</value>
-						<value>file:C:/EntornoSimon/git/interoperability/src/main/resources/spring/local/TutorialDeploymentPropertyPlaceholders.properties</value>
+						<value>file:E:/java/git/jbossews/src/main/resources/spring/local/TutorialDeploymentPropertyPlaceholders.properties</value>
 					</list>
 				</property>
 				<property name="ignoreResourceNotFound" value="false"/>
@@ -35,9 +39,8 @@
 				<constructor-arg type="java.lang.String" value="${debug}" />
 			</bean>		
 			
+ -->
 
-
-    <mvc:annotation-driven />
 
 	
 

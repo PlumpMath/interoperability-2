@@ -226,7 +226,7 @@
 				</configuration>
 			</plugin>
 			
-			<!-- 
+		
 			<plugin>
                <groupId>org.codehaus.mojo</groupId>
                <artifactId>jaxws-maven-plugin</artifactId>
@@ -239,9 +239,9 @@
                       </execution>
                </executions>
 		       <configuration>
-			       <packageName>org.wtf.interoperability.ws.vo</packageName>			        
+			       <packageName>com.aes.service.accounts.model</packageName>			        
 					<wsdlUrls>
-                      <wsdlUrl>${basedir}/src/main/resources/wsdl/TutorialService.wsdl</wsdlUrl>					
+                      <wsdlUrl>${basedir}/src/main/resources/wsdl/services/ReportarFraude.wsdl</wsdlUrl>					
 					</wsdlUrls>
 					<sourceDestDir>${basedir}/src/main/java</sourceDestDir>
 			        <destDir>C:/EntornoSimon/ServiciosSimon/</destDir>
@@ -250,8 +250,7 @@
 			        <extension>true</extension>
 		      </configuration>
 		   </plugin>
-		    -->
-			
+		  
 			<!-- 
 			<plugin>
 				<groupId>org.apache.cxf</groupId>
