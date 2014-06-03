@@ -32,7 +32,38 @@ http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 		<jaxws:binding>
 			<soap:soapBinding style="document" use="literal" version="1.1" />
 		</jaxws:binding>
+		
+		<jaxws:inInterceptors>
+			<bean class="org.apache.cxf.interceptor.LoggingInInterceptor"/>
+		</jaxws:inInterceptors>
+		
+		<jaxws:outInterceptors> 
+			<bean class="org.apache.cxf.interceptor.LoggingOutInterceptor"/>
+		</jaxws:outInterceptors>
+		
 	</jaxws:endpoint>
+	
+	<jaxws:endpoint implementor="#cardFraudulentService"
+		address="/CardFraudulentServiceV2"  wsdlLocation="wsdl/services/CardFraudulentV2.wsdl">
+		<jaxws:binding>
+			<soap:soapBinding style="document" use="literal" version="1.1" />
+		</jaxws:binding>
+		
+		<jaxws:inInterceptors>
+			<bean class="org.apache.cxf.interceptor.LoggingInInterceptor"/>
+		</jaxws:inInterceptors>
+		
+		<jaxws:outInterceptors> 
+			<bean class="org.apache.cxf.interceptor.LoggingOutInterceptor"/>
+		</jaxws:outInterceptors>
+		
+		<jaxws:properties>
+        	 <entry key="ws-security.callback-handler" value-ref="myPasswordCallback"/>
+      	</jaxws:properties> 
+		
+	</jaxws:endpoint>
+	
+	 <bean id="myPasswordCallback" class="com.aes.service.accounts.security.ServerPasswordCallback" />
 	
 	 <!-- 
 	<bean id="keystorePasswordCallback" class="org.wtf.interoperability.ws.security.KeystorePasswordCallback">
