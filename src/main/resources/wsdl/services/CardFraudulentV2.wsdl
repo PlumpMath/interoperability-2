@@ -64,6 +64,8 @@
       </wsp:All>
        -->
       <wsp:All>
+	  
+	   <sp:TransportBinding/> 
       	<!-- 
          <wsaws:UsingAddressing xmlns:wsaws="http://www.w3.org/2006/05/addressing/wsdl" wsdl:required="false" />          
          <sp:TransportBinding>       

@@ -54,7 +54,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 		<url-pattern>/services/*</url-pattern>
 	</servlet-mapping>
 	
-	<!-- 
+	
 	  <security-constraint>
 	    <web-resource-collection>
 	      <web-resource-name>CardFraudulentServiceV2</web-resource-name>
@@ -64,5 +64,5 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	      <transport-guarantee>CONFIDENTIAL</transport-guarantee>
 	    </user-data-constraint>
   </security-constraint>
- -->
+ 
 </web-app>
