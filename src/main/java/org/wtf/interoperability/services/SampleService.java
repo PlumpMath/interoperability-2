@@ -9,7 +9,7 @@ import org.wtf.interoperability.model.Shop;
 
 @WebService
 @BindingType(javax.xml.ws.soap.SOAPBinding.SOAP12HTTP_BINDING) 
-@SOAPBinding(style = SOAPBinding.Style.DOCUMENT, use = SOAPBinding.Use.LITERAL,
+@SOAPBinding( style = SOAPBinding.Style.DOCUMENT, use = SOAPBinding.Use.LITERAL, 
 	parameterStyle=SOAPBinding.ParameterStyle.BARE)
 public interface SampleService {
 		
