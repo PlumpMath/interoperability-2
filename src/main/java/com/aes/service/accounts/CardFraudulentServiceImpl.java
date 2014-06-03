@@ -5,6 +5,7 @@ import javax.inject.Named;
 import javax.jws.WebService;
 
 import org.apache.commons.lang.StringUtils;
+import org.apache.cxf.annotations.SchemaValidation;
 import org.springframework.context.annotation.Scope;
 
 import com.aes.service.accounts.model.CardStatusModRsType;
@@ -19,6 +20,7 @@ import com.aes.service.accounts.model.StatusType;
 @Scope(value = "singleton")
 @WebService(endpointInterface = "com.aes.service.accounts.CardFraudulentService", targetNamespace = "http://com/aes/service/accounts/CardFraudulent",
         serviceName = "CardFraudulentService", portName = "CardFraudulentPort" )
+@SchemaValidation
 public class CardFraudulentServiceImpl implements CardFraudulentService {
 
 	@Override
