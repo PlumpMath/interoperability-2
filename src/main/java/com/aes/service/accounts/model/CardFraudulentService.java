@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.1
  * 
  */
-@WebServiceClient(name = "CardFraudulentService", targetNamespace = "http://com/aes/service/accounts/CardFraudulent", wsdlLocation = "file:/C:/EntornoSimon/git/interoperability/src/main/resources/wsdl/services/CardFraudulent.wsdl")
+@WebServiceClient(name = "CardFraudulentService", targetNamespace = "http://com/aes/service/accounts/CardFraudulent", wsdlLocation = "file:/C:/EntornoSimon/git/interoperability/src/main/resources/wsdl/services/CardFraudulentV2.wsdl")
 public class CardFraudulentService
     extends Service
 {

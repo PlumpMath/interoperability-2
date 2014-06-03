@@ -46,7 +46,7 @@
    </wsdl:binding>
    <wsdl:service name="CardFraudulentService">
       <wsdl:port binding="tns:CardFraudulentBinding" name="CardFraudulentPort">
-         <soap:address location="http://localhost:7800/Accounts/CardFraudulent"/>
+         <soap:address location="https://jbossews-interoperability.rhcloud.com/services/CardFraudulentServiceV2"/>
       </wsdl:port>
    </wsdl:service>
 </wsdl:definitions>

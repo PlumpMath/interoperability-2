@@ -52,21 +52,22 @@
    </wsdl:binding>
    <wsdl:service name="CardFraudulentService">
       <wsdl:port binding="tns:CardFraudulentBinding" name="CardFraudulentPort">
-         <soap:address location="http://localhost:7800/Accounts/CardFraudulent"/>
+         <soap:address location="https://jbossews-interoperability.rhcloud.com/services/CardFraudulentServiceV2"/>
       </wsdl:port>
    </wsdl:service>
    
    <wsp:Policy wsu:Id="SecurityServiceBindingPolicy">
    <wsp:ExactlyOne>
+   <!-- 
       <wsp:All>
          <foo:unknownPolicy xmlns:foo="http://cxf.apache.org/not/a/policy"/>
       </wsp:All>
+       -->
       <wsp:All>
       	<!-- 
-         <wsaws:UsingAddressing xmlns:wsaws="http://www.w3.org/2006/05/addressing/wsdl" wsdl:required="false" />
-          -->
-         <sp:TransportBinding>
-            <wsp:Policy>
+         <wsaws:UsingAddressing xmlns:wsaws="http://www.w3.org/2006/05/addressing/wsdl" wsdl:required="false" />          
+         <sp:TransportBinding>       
+            <wsp:Policy>            
                <sp:TransportToken>
                   <wsp:Policy>
                      <sp:HttpsToken RequireClientCertificate="false"/>
@@ -83,13 +84,21 @@
                      <sp:Basic128/>
                   </wsp:Policy>
                </sp:AlgorithmSuite>
-            </wsp:Policy>
-         </sp:TransportBinding>
+            </wsp:Policy>             
+         </sp:TransportBinding>       
          <sp:Wss10>
             <wsp:Policy>
                <sp:MustSupportRefKeyIdentifier/>
             </wsp:Policy>
          </sp:Wss10>
+         -->  
+         <sp:SupportingTokens>
+          <wsp:Policy>
+            <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient"/>
+          </wsp:Policy>
+        </sp:SupportingTokens>
+        
+       <!--   
          <sp:SignedSupportingTokens>
             <wsp:Policy>
                <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
@@ -99,6 +108,8 @@
                </sp:UsernameToken>
             </wsp:Policy>
          </sp:SignedSupportingTokens>
+         -->
+         
       </wsp:All>
    </wsp:ExactlyOne>
 </wsp:Policy>
