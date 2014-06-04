@@ -11,44 +11,44 @@
       xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
       xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
   
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <sp:AsymmetricBinding
-            xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
-          <wsp:Policy>
-            <sp:InitiatorToken>
-              <wsp:Policy>
-                <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
-                  <wsp:Policy>
-                    <sp:RequireThumbprintReference/>
-                  </wsp:Policy>
-                </sp:X509Token>
-              </wsp:Policy>
-            </sp:InitiatorToken>
-            <sp:RecipientToken>
-              <wsp:Policy>
-                <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/Never">
-                  <wsp:Policy>
-                    <sp:RequireThumbprintReference/>
-                  </wsp:Policy>
-                </sp:X509Token>
-              </wsp:Policy>
-            </sp:RecipientToken>
-            <sp:AlgorithmSuite>
-              <wsp:Policy>
-                <sp:TripleDesRsa15/>
-
-              </wsp:Policy>
-            </sp:AlgorithmSuite>
-            <sp:Layout>
-              <wsp:Policy>
-                <sp:Strict/>
-              </wsp:Policy>
-            </sp:Layout>
-            <sp:IncludeTimestamp/>
-            <sp:OnlySignEntireHeadersAndBody/>
-          </wsp:Policy>
-        </sp:AsymmetricBinding>
+         <wsp:ExactlyOne>
+			<wsp:All>
+			<sp:AsymmetricBinding>
+				<wsp:Policy>
+					<sp:InitiatorToken>
+						<wsp:Policy>
+							<sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+								<wsp:Policy>
+									<sp:WssX509V3Token11 />
+								</wsp:Policy>
+							</sp:X509Token>
+						</wsp:Policy>
+					</sp:InitiatorToken>
+					<sp:RecipientToken>
+						<wsp:Policy>
+							<sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/Never">
+								<wsp:Policy>
+									<sp:WssX509V3Token11 />
+									<sp:RequireIssuerSerialReference />
+								</wsp:Policy>
+							</sp:X509Token>
+						</wsp:Policy>
+					</sp:RecipientToken>
+					<sp:Layout>
+						<wsp:Policy>
+							<sp:Strict />
+						</wsp:Policy>
+					</sp:Layout>
+					<sp:IncludeTimestamp />
+					<sp:OnlySignEntireHeadersAndBody />
+					<sp:AlgorithmSuite>
+						<wsp:Policy>
+							<sp:Basic128 />
+						</wsp:Policy>
+					</sp:AlgorithmSuite>
+					<sp:EncryptSignature />
+				</wsp:Policy>
+			</sp:AsymmetricBinding>
         <sp:SignedParts
             xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
           <sp:Body/>
@@ -60,8 +60,7 @@
         </sp:EncryptedParts>
       </wsp:All>
     </wsp:ExactlyOne>
-  </wsp:Policy>
-  
+  </wsp:Policy>  
     
     
    <wsdl:types>

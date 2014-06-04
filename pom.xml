@@ -241,7 +241,7 @@
 		       <configuration>
 			       <packageName>com.aes.service.accounts.model</packageName>			        
 					<wsdlUrls>
-                      <wsdlUrl>${basedir}/src/main/resources/wsdl/services/CardFraudulent.wsdl</wsdlUrl>					
+                      <wsdlUrl>${basedir}/src/main/resources/wsdl/services/CardFraudulentV3.wsdl</wsdlUrl>					
 					</wsdlUrls>
 					<sourceDestDir>${basedir}/src/main/java</sourceDestDir>
 			        <destDir>C:/EntornoSimon/ServiciosSimon/</destDir>

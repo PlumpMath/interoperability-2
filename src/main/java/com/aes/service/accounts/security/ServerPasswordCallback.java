@@ -13,8 +13,8 @@ public class ServerPasswordCallback implements CallbackHandler {
             UnsupportedCallbackException {
         WSPasswordCallback pc = (WSPasswordCallback) callbacks[0];
 
-        if ("joe".equals(pc.getIdentifier())) {
-           pc.setPassword("master"); 
+        if ("aes".equals(pc.getIdentifier())) {
+           pc.setPassword("aes2014"); 
         }
     }
 }

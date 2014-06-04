@@ -63,6 +63,34 @@ http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 		
 	</jaxws:endpoint>
 	
+		<jaxws:endpoint implementor="#cardFraudulentService"
+		address="/CardFraudulentServiceV3"  wsdlLocation="wsdl/services/CardFraudulentV3.wsdl">
+		<jaxws:binding>
+			<soap:soapBinding style="document" use="literal" version="1.1" />
+		</jaxws:binding>
+		
+		<jaxws:inInterceptors>
+			<bean class="org.apache.cxf.interceptor.LoggingInInterceptor"/>
+		</jaxws:inInterceptors>
+		
+		<jaxws:outInterceptors> 
+			<bean class="org.apache.cxf.interceptor.LoggingOutInterceptor"/>
+		</jaxws:outInterceptors>
+		
+	  <jaxws:properties>
+	      <entry key="ws-security.signature.properties" value-ref="keystoreProperties"/>
+	      <entry key="ws-security.encryption.properties" value-ref="keystoreProperties"/>
+	      <entry key="ws-security.signature.username" value="serverkey"/>
+	      <entry key="ws-security.encryption.username" value="useReqSigCert"/>
+	      <entry key="ws-security.callback-handler"
+	          value="com.aes.service.accounts.security.ServerCallback"/>
+	      <entry key="schema-validation-enabled" value="true" />
+		 <entry key="ws-security.is-bsp-compliant" value="false"/>
+	    </jaxws:properties>
+		
+	</jaxws:endpoint>
+	
+	
 	 <bean id="myPasswordCallback" class="com.aes.service.accounts.security.ServerPasswordCallback" />
 	
 	 <!-- 
@@ -72,20 +100,20 @@ http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 				<entry key="${wss.keyAlias}" value="${wss.keyPassword}"/>
 			</map>
 		</property>
-	</bean>
+	</bean>-->
 
 	<util:properties id="keystoreProperties">
 		<prop key="org.apache.ws.security.crypto.provider">org.apache.ws.security.components.crypto.Merlin</prop>
 		<prop key="org.apache.ws.security.crypto.merlin.keystore.type">jks</prop>
-		<prop key="org.apache.ws.security.crypto.merlin.keystore.password">aes2014</prop>
-		<prop key="org.apache.ws.security.crypto.merlin.keystore.alias">myservicekey</prop>
-		<prop key="org.apache.ws.security.crypto.merlin.file">E:/java/git/jbossews/src/main/resources/spring/local/serviceKeystore.jks</prop>
-		<prop key="org.apache.ws.security.crypto.merlin.truststore.file">E:/java/git/jbossews/src/main/resources/spring/local/serviceKeystore.jks</prop>
-		<prop key="org.apache.ws.security.crypto.merlin.truststore.password">aes2014</prop>
+		<prop key="org.apache.ws.security.crypto.merlin.keystore.password">nosecret</prop>
+		<prop key="org.apache.ws.security.crypto.merlin.keystore.alias">serverkey</prop>
+		<prop key="org.apache.ws.security.crypto.merlin.file">C:/EntornoSimon/git/interoperability/src/main/resources/server.keystore</prop>
+		<prop key="org.apache.ws.security.crypto.merlin.truststore.file">C:/EntornoSimon/git/interoperability/src/main/resources/server.keystore</prop>
+		<prop key="org.apache.ws.security.crypto.merlin.truststore.password">nosecret</prop>
 		<prop key="org.apache.ws.security.crypto.merlin.truststore.type">jks</prop>
 	</util:properties>
 	
-		
+		 <!-- 
 	<jaxws:endpoint implementor="#sampleService"
 		address="/SampleService">
 		<jaxws:binding>

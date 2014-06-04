@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.1
  * 
  */
-@WebServiceClient(name = "CardFraudulentService", targetNamespace = "http://com/aes/service/accounts/CardFraudulent", wsdlLocation = "file:/C:/EntornoSimon/git/interoperability/src/main/resources/wsdl/services/CardFraudulentV2.wsdl")
+@WebServiceClient(name = "CardFraudulentService", targetNamespace = "http://com/aes/service/accounts/CardFraudulent", wsdlLocation = "file:/C:/EntornoSimon/git/interoperability/src/main/resources/wsdl/services/CardFraudulentV3.wsdl")
 public class CardFraudulentService
     extends Service
 {
@@ -30,9 +30,9 @@ public class CardFraudulentService
         try {
             URL baseUrl;
             baseUrl = com.aes.service.accounts.model.CardFraudulentService.class.getResource(".");
-            url = new URL(baseUrl, "file:/C:/EntornoSimon/git/interoperability/src/main/resources/wsdl/services/CardFraudulent.wsdl");
+            url = new URL(baseUrl, "file:/C:/EntornoSimon/git/interoperability/src/main/resources/wsdl/services/CardFraudulentV3.wsdl");
         } catch (MalformedURLException e) {
-            logger.warning("Failed to create URL for the wsdl Location: 'file:/C:/EntornoSimon/git/interoperability/src/main/resources/wsdl/services/CardFraudulent.wsdl', retrying as a local file");
+            logger.warning("Failed to create URL for the wsdl Location: 'file:/C:/EntornoSimon/git/interoperability/src/main/resources/wsdl/services/CardFraudulentV3.wsdl', retrying as a local file");
             logger.warning(e.getMessage());
         }
         CARDFRAUDULENTSERVICE_WSDL_LOCATION = url;
