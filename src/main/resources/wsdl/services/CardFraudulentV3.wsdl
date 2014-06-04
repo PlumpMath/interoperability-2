@@ -1,0 +1,118 @@
+<wsdl:definitions name="CardFraudulent" targetNamespace="http://com/aes/service/accounts/CardFraudulent" 
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pref="http://www.aes.com/xs/modelo"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://com/aes/service/accounts/CardFraudulent" 
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    
+     <!-- Policy for first signing and then encrypting all messages, with the certificate
+   included in the message from client to server but only a thumbprint on messages from
+   the server to the client. -->
+  <wsp:Policy wsu:Id="SignEncr"
+      xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+      xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+      xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+  
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:AsymmetricBinding
+            xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+          <wsp:Policy>
+            <sp:InitiatorToken>
+              <wsp:Policy>
+                <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                  <wsp:Policy>
+                    <sp:RequireThumbprintReference/>
+                  </wsp:Policy>
+                </sp:X509Token>
+              </wsp:Policy>
+            </sp:InitiatorToken>
+            <sp:RecipientToken>
+              <wsp:Policy>
+                <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/Never">
+                  <wsp:Policy>
+                    <sp:RequireThumbprintReference/>
+                  </wsp:Policy>
+                </sp:X509Token>
+              </wsp:Policy>
+            </sp:RecipientToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:TripleDesRsa15/>
+
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp/>
+            <sp:OnlySignEntireHeadersAndBody/>
+          </wsp:Policy>
+        </sp:AsymmetricBinding>
+        <sp:SignedParts
+            xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+          <sp:Body/>
+
+        </sp:SignedParts>
+        <sp:EncryptedParts
+            xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+          <sp:Body/>
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  
+    
+    
+   <wsdl:types>
+      <xsd:schema targetNamespace="http://com/aes/service/accounts/CardFraudulent" 
+      xmlns:mrm="http://com/aes/service/accounts/CardFraudulent" xmlns:toures="http://www.aes.com/xs/modelo">
+         <xsd:import namespace="http://www.aes.com/xs/modelo" schemaLocation="../xsd/CardStatusMod.xsd"/>
+         <xsd:element name="modCardStatusRequest" type="mrm:ModCardStatusInput"/>
+         <xsd:element name="modCardStatusResponse" type="mrm:ModCardStatusOutput"/>
+         <xsd:complexType name="ModCardStatusInput">
+            <xsd:sequence>
+               <xsd:element ref="toures:ModCardStatusInp"/>
+            </xsd:sequence>
+         </xsd:complexType>
+         <xsd:complexType name="ModCardStatusOutput">
+            <xsd:sequence>
+               <xsd:element ref="toures:ModCardStatusOut"/>
+            </xsd:sequence>
+         </xsd:complexType>
+      </xsd:schema>
+   </wsdl:types>
+   <wsdl:message name="modCardStatusRequest">
+      <wsdl:part element="tns:modCardStatusRequest" name="modCardStatusRequest"/>
+   </wsdl:message>
+   <wsdl:message name="modCardStatusResponse">
+      <wsdl:part element="tns:modCardStatusResponse" name="modCardStatusResponse"/>
+   </wsdl:message>
+   <wsdl:portType name="CardFraudulent">
+      <wsdl:operation name="report">
+         <wsdl:input message="tns:modCardStatusRequest"/>
+         <wsdl:output message="tns:modCardStatusResponse"/>
+      </wsdl:operation>
+   </wsdl:portType>
+   <wsdl:binding name="CardFraudulentBinding" type="tns:CardFraudulent">
+       <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+        	URI="#SignEncr"/>
+      <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+      <wsdl:operation name="report">
+         <soap:operation soapAction=""/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:service name="CardFraudulentService">
+      <wsdl:port binding="tns:CardFraudulentBinding" name="CardFraudulentPort">
+         <soap:address location="https://jbossews-interoperability.rhcloud.com/services/CardFraudulentServiceV2"/>
+      </wsdl:port>
+   </wsdl:service>
+   
+      
+</wsdl:definitions>
