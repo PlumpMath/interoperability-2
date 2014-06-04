@@ -48,7 +48,7 @@
 		<prop key="org.apache.ws.security.crypto.merlin.keystore.type">jks</prop>
 		<prop key="org.apache.ws.security.crypto.merlin.keystore.password">nosecret</prop>
 		<prop key="org.apache.ws.security.crypto.merlin.keystore.alias">clientkey</prop>
-		<prop key="org.apache.ws.security.crypto.merlin.file">>C:/EntornoSimon/git/interoperability/src/main/resources/client.keystore</prop>
+		<prop key="org.apache.ws.security.crypto.merlin.file">C:/EntornoSimon/git/interoperability/src/main/resources/client.keystore</prop>
 		<prop key="org.apache.ws.security.crypto.merlin.truststore.file">C:/EntornoSimon/git/interoperability/src/main/resources/client.keystore</prop>
 		<prop key="org.apache.ws.security.crypto.merlin.truststore.password">nosecret</prop>
 		<prop key="org.apache.ws.security.crypto.merlin.truststore.type">jks</prop>
@@ -56,7 +56,7 @@
 
 	<jaxws:client id="testClient" serviceClass="com.aes.service.accounts.CardFraudulentService"
 		address="http://localhost:8181/interoperability/services/CardFraudulentServiceV3" wsdlLocation="/wsdl/services/CardFraudulentV3.wsdl"
-		serviceName="s:CardFraudulentService" endpointName="s:CardFraudulentBinding" xmlns:s="http://com/aes/service/accounts/CardFraudulent/">
+		serviceName="s:CardFraudulentService" endpointName="s:CardFraudulentPort" xmlns:s="http://com/aes/service/accounts/CardFraudulent">
 		<jaxws:properties>
 			<entry key="ws-security.callback-handler" value-ref="keystorePasswordCallback"/>        
 			<entry key="ws-security.encryption.properties" value-ref="keystoreProperties"/>
