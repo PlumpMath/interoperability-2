@@ -39,25 +39,30 @@
 							<sp:Strict />
 						</wsp:Policy>
 					</sp:Layout>
-					<sp:IncludeTimestamp />
+					<sp:IncludeTimestamp/>
 					<sp:OnlySignEntireHeadersAndBody />
 					<sp:AlgorithmSuite>
-						<wsp:Policy>
-							<sp:Basic128 />
-						</wsp:Policy>
-					</sp:AlgorithmSuite>
+		              <wsp:Policy>
+		                <sp:Basic128/>
+		              </wsp:Policy>
+		            </sp:AlgorithmSuite>
 					<sp:EncryptSignature />
 				</wsp:Policy>
 			</sp:AsymmetricBinding>
-        <sp:SignedParts
-            xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
-          <sp:Body/>
-
-        </sp:SignedParts>
-        <sp:EncryptedParts
-            xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
-          <sp:Body/>
-        </sp:EncryptedParts>
+	        <sp:SignedParts
+	            xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+	          <sp:Body/>
+	          <sp:Header Namespace="http://com/aes/service/accounts/CardFraudulent/"/>	
+	        </sp:SignedParts>
+	        <sp:EncryptedParts
+	            xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+	          <sp:Body/>
+	        </sp:EncryptedParts>
+	         <sp:Wss10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+	          <wsp:Policy>
+	            <sp:MustSupportRefIssuerSerial/>
+	          </wsp:Policy>
+	        </sp:Wss10>
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>  

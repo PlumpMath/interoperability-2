@@ -15,7 +15,7 @@ import org.apache.ws.security.WSPasswordCallback;
 public class ServerCallback implements CallbackHandler {
 	public void handle(Callback[] callbacks)
 			throws IOException, UnsupportedCallbackException {
-		for (int i = 0; i < callbacks.length; i++) {
+		for (int i = 0; i < callbacks.length; i++) { 
 			WSPasswordCallback pwcb = (WSPasswordCallback)callbacks[i];
 			String id = pwcb.getIdentifier();
 			switch (pwcb.getUsage()) {
