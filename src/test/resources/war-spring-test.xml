@@ -41,7 +41,6 @@
 			</map>
 		</property>
 	</bean>
-	 -->
 	
 	<util:properties id="keystoreProperties">
 		<prop key="org.apache.ws.security.crypto.provider">org.apache.ws.security.components.crypto.Merlin</prop>
@@ -53,12 +52,26 @@
 		<prop key="org.apache.ws.security.crypto.merlin.truststore.password">nosecret</prop>
 		<prop key="org.apache.ws.security.crypto.merlin.truststore.type">jks</prop>
 	</util:properties>
+	
+	 -->
+	
+	<util:properties id="keystoreProperties">
+		<prop key="org.apache.ws.security.crypto.provider">org.apache.ws.security.components.crypto.Merlin</prop>
+		<prop key="org.apache.ws.security.crypto.merlin.keystore.type">jks</prop>
+		<prop key="org.apache.ws.security.crypto.merlin.keystore.password">nosecret</prop>
+		<prop key="org.apache.ws.security.crypto.merlin.keystore.alias">clientkey</prop>
+		<prop key="org.apache.ws.security.crypto.merlin.file">C:/EntornoSimon/git/interoperability/client.keystore</prop>
+		<prop key="org.apache.ws.security.crypto.merlin.truststore.file">C:/EntornoSimon/git/interoperability/client.keystore</prop>
+		<prop key="org.apache.ws.security.crypto.merlin.truststore.password">nosecret</prop>
+		<prop key="org.apache.ws.security.crypto.merlin.truststore.type">jks</prop>
+	</util:properties>
 
 <!-- 
 http://jbossews-interoperability.rhcloud.com/services/CardFraudulentServiceV3
+http://localhost:8181/interoperability/services/CardFraudulentServiceV3
  -->
 	<jaxws:client id="testClient" serviceClass="com.aes.service.accounts.CardFraudulentService"
-		address="http://localhost:8181/interoperability/services/CardFraudulentServiceV3" wsdlLocation="/wsdl/services/CardFraudulentV3.wsdl"
+		address="http://jbossews-interoperability.rhcloud.com/services/CardFraudulentServiceV3" wsdlLocation="/wsdl/services/CardFraudulentV3.wsdl"
 		serviceName="s:CardFraudulentService" endpointName="s:CardFraudulentPort" xmlns:s="http://com/aes/service/accounts/CardFraudulent">
 		<jaxws:properties>			        
 			<entry key="ws-security.encryption.properties" value-ref="keystoreProperties"/>

@@ -13,11 +13,7 @@ import com.aes.service.accounts.model.ModCardStatusOutput;
 import com.aes.service.accounts.model.MsgRqHdrType;
 
 @ContextConfiguration(locations = {        
-        "classpath*:/META-INF/cxf/cxf.xml",
-        "classpath*:/META-INF/cxf/cxf-extension-soap.xml",
-        "classpath*:/META-INF/cxf/cxf-extension-http.xml",
-        "classpath*:/META-INF/cxf/cxf-extension-policy.xml",
-        "classpath*:/META-INF/cxf/cxf-extension-ws-security.xml",
+        "classpath*:/META-INF/cxf/cxf.xml",        
         "classpath*:/**/war-spring-test.xml"
 })
 public class CardFraudulentServiceTest extends AbstractTestNGSpringContextTests{

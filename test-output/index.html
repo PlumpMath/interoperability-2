@@ -23,7 +23,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -37,7 +37,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Default_suite">
-              <span class="suite-name border-failed">Default suite</span>
+              <span class="suite-name border-passed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -48,7 +48,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\13719643\AppData\Local\Temp\testng-eclipse--1930348770\testng-customsuite.xml</span>
+                    <span>C:\Users\13719643\AppData\Local\Temp\testng-eclipse-1764752831\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -90,21 +90,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method, 1 failed,   </span>
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
-                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods passed suite-Default_suite"> (hide)</a> <!-- hide-methods passed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods passed suite-Default_suite"> (show)</a> <!-- show-methods passed suite-Default_suite -->
                     </span>
-                    <div class="method-list-content failed suite-Default_suite">
+                    <div class="method-list-content passed suite-Default_suite">
                       <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.aes.service.accounts.integration.ConsultarFraudesTest" hash-for-method="basicTest">basicTest</a> <!-- method navigator-link -->
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.aes.service.accounts.integration.CardFraudulentServiceTest" hash-for-method="basicTest">basicTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content failed suite-Default_suite -->
+                    </div> <!-- method-list-content passed suite-Default_suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -116,10 +116,10 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
-          <div class="suite-Default_suite-class-failed">
+          <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">com.aes.service.accounts.integration.ConsultarFraudesTest</span>
+              <img src="passed.png"/>
+              <span class="class-name">com.aes.service.accounts.integration.CardFraudulentServiceTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
@@ -127,124 +127,14 @@
                   <a name="basicTest">
                   </a> <!-- basicTest -->
                   <span class="method-name">basicTest</span>
-                  <div class="stack-trace">javax.xml.ws.soap.SOAPFaultException: Index: 0, Size: 0
-	at org.apache.cxf.jaxws.JaxWsClientProxy.invoke(JaxWsClientProxy.java:157)
-	at com.sun.proxy.$Proxy45.getCardStatus(Unknown Source)
-	at com.aes.service.accounts.integration.ConsultarFraudesTest.basicTest(ConsultarFraudesTest.java:23)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.MethodInvocationHelper$1.runTestMethod(MethodInvocationHelper.java:200)
-	at org.springframework.test.context.testng.AbstractTestNGSpringContextTests.run(AbstractTestNGSpringContextTests.java:155)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.testng.internal.MethodInvocationHelper.invokeHookable(MethodInvocationHelper.java:212)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:707)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-Caused by: java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.ArrayList.rangeCheck(ArrayList.java:604)
-	at java.util.ArrayList.get(ArrayList.java:382)
-	at org.apache.cxf.ws.security.policy.builders.ProtectionTokenBuilder.processAlternative(ProtectionTokenBuilder.java:72)
-	at org.apache.cxf.ws.security.policy.builders.ProtectionTokenBuilder.build(ProtectionTokenBuilder.java:63)
-	at org.apache.cxf.ws.security.policy.builders.ProtectionTokenBuilder.build(ProtectionTokenBuilder.java:41)
-	at org.apache.neethi.AssertionBuilderFactoryImpl.invokeBuilder(AssertionBuilderFactoryImpl.java:138)
-	at org.apache.neethi.AssertionBuilderFactoryImpl.build(AssertionBuilderFactoryImpl.java:117)
-	at org.apache.neethi.PolicyBuilder.processOperationElement(PolicyBuilder.java:224)
-	at org.apache.neethi.PolicyBuilder.getPolicyOperator(PolicyBuilder.java:174)
-	at org.apache.neethi.PolicyBuilder.getPolicy(PolicyBuilder.java:124)
-	at org.apache.cxf.ws.security.policy.builders.SymmetricBindingBuilder.build(SymmetricBindingBuilder.java:61)
-	at org.apache.cxf.ws.security.policy.builders.SymmetricBindingBuilder.build(SymmetricBindingBuilder.java:43)
-	at org.apache.neethi.AssertionBuilderFactoryImpl.invokeBuilder(AssertionBuilderFactoryImpl.java:138)
-	at org.apache.neethi.AssertionBuilderFactoryImpl.build(AssertionBuilderFactoryImpl.java:117)
-	at org.apache.neethi.PolicyBuilder.processOperationElement(PolicyBuilder.java:224)
-	at org.apache.neethi.PolicyBuilder.getPolicyOperator(PolicyBuilder.java:174)
-	at org.apache.neethi.PolicyBuilder.getPolicy(PolicyBuilder.java:124)
-	at org.apache.cxf.ws.security.policy.builders.SecureConversationTokenBuilder.build(SecureConversationTokenBuilder.java:111)
-	at org.apache.cxf.ws.security.policy.builders.SecureConversationTokenBuilder.build(SecureConversationTokenBuilder.java:39)
-	at org.apache.neethi.AssertionBuilderFactoryImpl.invokeBuilder(AssertionBuilderFactoryImpl.java:138)
-	at org.apache.neethi.AssertionBuilderFactoryImpl.build(AssertionBuilderFactoryImpl.java:117)
-	at org.apache.neethi.PolicyBuilder.processOperationElement(PolicyBuilder.java:224)
-	at org.apache.neethi.PolicyBuilder.getPolicyOperator(PolicyBuilder.java:174)
-	at org.apache.neethi.PolicyBuilder.getPolicy(PolicyBuilder.java:124)
-	at org.apache.cxf.ws.security.policy.builders.ProtectionTokenBuilder.build(ProtectionTokenBuilder.java:59)
-	at org.apache.cxf.ws.security.policy.builders.ProtectionTokenBuilder.build(ProtectionTokenBuilder.java:41)
-	at org.apache.neethi.AssertionBuilderFactoryImpl.invokeBuilder(AssertionBuilderFactoryImpl.java:138)
-	at org.apache.neethi.AssertionBuilderFactoryImpl.build(AssertionBuilderFactoryImpl.java:117)
-	at org.apache.neethi.PolicyBuilder.processOperationElement(PolicyBuilder.java:224)
-	at org.apache.neethi.PolicyBuilder.getPolicyOperator(PolicyBuilder.java:174)
-	at org.apache.neethi.PolicyBuilder.getPolicy(PolicyBuilder.java:124)
-	at org.apache.cxf.ws.security.policy.builders.SymmetricBindingBuilder.build(SymmetricBindingBuilder.java:61)
-	at org.apache.cxf.ws.security.policy.builders.SymmetricBindingBuilder.build(SymmetricBindingBuilder.java:43)
-	at org.apache.neethi.AssertionBuilderFactoryImpl.invokeBuilder(AssertionBuilderFactoryImpl.java:138)
-	at org.apache.neethi.AssertionBuilderFactoryImpl.build(AssertionBuilderFactoryImpl.java:117)
-	at org.apache.neethi.PolicyBuilder.processOperationElement(PolicyBuilder.java:224)
-	at org.apache.neethi.PolicyBuilder.getAllOperator(PolicyBuilder.java:184)
-	at org.apache.neethi.PolicyBuilder.processOperationElement(PolicyBuilder.java:217)
-	at org.apache.neethi.PolicyBuilder.getExactlyOneOperator(PolicyBuilder.java:180)
-	at org.apache.neethi.PolicyBuilder.processOperationElement(PolicyBuilder.java:215)
-	at org.apache.neethi.PolicyBuilder.getPolicyOperator(PolicyBuilder.java:174)
-	at org.apache.neethi.PolicyBuilder.getPolicy(PolicyBuilder.java:124)
-	at org.apache.cxf.ws.policy.attachment.reference.LocalServiceModelReferenceResolver.resolveReference(LocalServiceModelReferenceResolver.java:53)
-	at org.apache.cxf.ws.policy.attachment.wsdl11.Wsdl11AttachmentPolicyProvider.resolveLocal(Wsdl11AttachmentPolicyProvider.java:292)
-	at org.apache.cxf.ws.policy.attachment.wsdl11.Wsdl11AttachmentPolicyProvider.resolveReference(Wsdl11AttachmentPolicyProvider.java:272)
-	at org.apache.cxf.ws.policy.attachment.wsdl11.Wsdl11AttachmentPolicyProvider.getElementPolicy(Wsdl11AttachmentPolicyProvider.java:220)
-	at org.apache.cxf.ws.policy.attachment.wsdl11.Wsdl11AttachmentPolicyProvider.getElementPolicy(Wsdl11AttachmentPolicyProvider.java:168)
-	at org.apache.cxf.ws.policy.attachment.wsdl11.Wsdl11AttachmentPolicyProvider.getElementPolicy(Wsdl11AttachmentPolicyProvider.java:161)
-	at org.apache.cxf.ws.policy.attachment.wsdl11.Wsdl11AttachmentPolicyProvider.getEffectivePolicy(Wsdl11AttachmentPolicyProvider.java:98)
-	at org.apache.cxf.ws.policy.PolicyEngineImpl.getAggregatedEndpointPolicy(PolicyEngineImpl.java:418)
-	at org.apache.cxf.ws.policy.EndpointPolicyImpl.initializePolicy(EndpointPolicyImpl.java:151)
-	at org.apache.cxf.ws.policy.EndpointPolicyImpl.initialize(EndpointPolicyImpl.java:139)
-	at org.apache.cxf.ws.policy.PolicyEngineImpl.createEndpointPolicyInfo(PolicyEngineImpl.java:550)
-	at org.apache.cxf.ws.policy.PolicyEngineImpl.getEndpointPolicy(PolicyEngineImpl.java:296)
-	at org.apache.cxf.ws.policy.PolicyEngineImpl.getClientEndpointPolicy(PolicyEngineImpl.java:279)
-	at org.apache.cxf.ws.policy.PolicyDataEngineImpl.getClientEndpointPolicy(PolicyDataEngineImpl.java:61)
-	at org.apache.cxf.transport.http.HTTPConduit.updateClientPolicy(HTTPConduit.java:314)
-	at org.apache.cxf.transport.http.HTTPConduit.&lt;init&gt;(HTTPConduit.java:300)
-	at org.apache.cxf.transport.http.URLConnectionHTTPConduit.&lt;init&gt;(URLConnectionHTTPConduit.java:68)
-	at org.apache.cxf.transport.http.HTTPTransportFactory.getConduit(HTTPTransportFactory.java:258)
-	at org.apache.cxf.binding.soap.SoapTransportFactory.getConduit(SoapTransportFactory.java:238)
-	at org.apache.cxf.binding.soap.SoapTransportFactory.getConduit(SoapTransportFactory.java:245)
-	at org.apache.cxf.endpoint.AbstractConduitSelector.getSelectedConduit(AbstractConduitSelector.java:103)
-	at org.apache.cxf.endpoint.UpfrontConduitSelector.prepare(UpfrontConduitSelector.java:63)
-	at org.apache.cxf.endpoint.ClientImpl.prepareConduitSelector(ClientImpl.java:896)
-	at org.apache.cxf.endpoint.ClientImpl.doInvoke(ClientImpl.java:565)
-	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:479)
-	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:382)
-	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:335)
-	at org.apache.cxf.frontend.ClientProxy.invokeSync(ClientProxy.java:96)
-	at org.apache.cxf.jaxws.JaxWsClientProxy.invoke(JaxWsClientProxy.java:135)
-	... 33 more
-
-</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Default_suite-class-failed -->
+          </div> <!-- suite-Default_suite-class-passed -->
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\13719643\AppData\Local\Temp\testng-eclipse--1930348770\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\13719643\AppData\Local\Temp\testng-eclipse-1764752831\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -253,11 +143,11 @@ Caused by: java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
 &lt;suite name=&quot;Default suite&quot;&gt;
   &lt;test verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.aes.service.accounts.integration.ConsultarFraudesTest&quot;&gt;
+      &lt;class name=&quot;com.aes.service.accounts.integration.CardFraudulentServiceTest&quot;&gt;
         &lt;methods&gt;
           &lt;include name=&quot;basicTest&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- com.aes.service.accounts.integration.ConsultarFraudesTest --&gt;
+      &lt;/class&gt; &lt;!-- com.aes.service.accounts.integration.CardFraudulentServiceTest --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -308,13 +198,13 @@ data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'basicTest')
-data.setCell(0, 2, 'com.aes.service.accounts.integration.ConsultarFraudesTest')
-data.setCell(0, 3, 776);
+data.setCell(0, 2, 'com.aes.service.accounts.integration.CardFraudulentServiceTest')
+data.setCell(0, 3, 12334);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 776 ms</span>
+              <span class="suite-total-time">Total running time: 12 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -340,7 +230,7 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.aes.service.accounts.integration.ConsultarFraudesTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.aes.service.accounts.integration.CardFraudulentServiceTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">springTestContextBeforeTestClass</span>
                 <span class="method-start">0 ms</span>
@@ -349,23 +239,21 @@ return data;
                 <span class="method-name">springTestContextPrepareTestInstance</span>
                 <span class="method-start">5 ms</span>
               </div> <!-- configuration-class before -->
-              <div class="configuration-method before">
-                <span class="method-name">springTestContextBeforeTestMethod(public void com.aes.service.accounts.integration.ConsultarFraudesTest.basicTest())</span>
-                <span class="method-start">814 ms</span>
-              </div> <!-- configuration-method before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">basicTest</span>
-                <span class="method-start">815 ms</span>
+                <span class="method-start">802 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">springTestContextBeforeTestMethod(public void com.aes.service.accounts.integration.CardFraudulentServiceTest.basicTest())</span>
+                <span class="method-start">802 ms</span>
+              </div> <!-- configuration-method before -->
               <div class="configuration-method after">
-                <span class="method-name">springTestContextAfterTestMethod(public void com.aes.service.accounts.integration.ConsultarFraudesTest.basicTest())</span>
-                <span class="method-start">1597 ms</span>
+                <span class="method-name">springTestContextAfterTestMethod(public void com.aes.service.accounts.integration.CardFraudulentServiceTest.basicTest())</span>
+                <span class="method-start">13136 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">springTestContextAfterTestClass</span>
-                <span class="method-start">1601 ms</span>
+                <span class="method-start">13137 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
