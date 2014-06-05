@@ -114,7 +114,7 @@
    </wsdl:binding>
    <wsdl:service name="CardFraudulentService">
       <wsdl:port binding="tns:CardFraudulentBinding" name="CardFraudulentPort">
-         <soap:address location="https://jbossews-interoperability.rhcloud.com/services/CardFraudulentServiceV2"/>
+         <soap:address location="http://jbossews-interoperability.rhcloud.com/services/CardFraudulentServiceV3"/>
       </wsdl:port>
    </wsdl:service>
    

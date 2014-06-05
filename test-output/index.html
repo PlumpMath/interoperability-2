@@ -48,7 +48,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\User\AppData\Local\Temp\testng-eclipse-585413574\testng-customsuite.xml</span>
+                    <span>C:\Users\User\AppData\Local\Temp\testng-eclipse-982190308\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -101,7 +101,7 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.example.tutorial.ws.integration.CardFraudulentServiceTest" hash-for-method="basicTest">basicTest</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.aes.service.accounts.integration.ConsultarFraudesTest" hash-for-method="basicTest">basicTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -119,7 +119,7 @@
           <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">com.example.tutorial.ws.integration.CardFraudulentServiceTest</span>
+              <span class="class-name">com.aes.service.accounts.integration.ConsultarFraudesTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
@@ -127,10 +127,10 @@
                   <a name="basicTest">
                   </a> <!-- basicTest -->
                   <span class="method-name">basicTest</span>
-                  <div class="stack-trace">javax.xml.ws.soap.SOAPFaultException: An error was discovered processing the &lt;wsse:Security&gt; header.
+                  <div class="stack-trace">javax.xml.ws.soap.SOAPFaultException: No signature token
 	at org.apache.cxf.jaxws.JaxWsClientProxy.invoke(JaxWsClientProxy.java:157)
-	at $Proxy35.report(Unknown Source)
-	at com.example.tutorial.ws.integration.CardFraudulentServiceTest.basicTest(CardFraudulentServiceTest.java:49)
+	at $Proxy45.getCardStatus(Unknown Source)
+	at com.aes.service.accounts.integration.ConsultarFraudesTest.basicTest(ConsultarFraudesTest.java:27)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -162,24 +162,24 @@
 	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-Caused by: org.apache.cxf.binding.soap.SoapFault: An error was discovered processing the &lt;wsse:Security&gt; header.
-	at org.apache.cxf.binding.soap.interceptor.Soap11FaultInInterceptor.unmarshalFault(Soap11FaultInInterceptor.java:84)
-	at org.apache.cxf.binding.soap.interceptor.Soap11FaultInInterceptor.handleMessage(Soap11FaultInInterceptor.java:51)
-	at org.apache.cxf.binding.soap.interceptor.Soap11FaultInInterceptor.handleMessage(Soap11FaultInInterceptor.java:40)
+Caused by: org.apache.cxf.ws.policy.PolicyException: No signature token
+	at org.apache.cxf.ws.security.wss4j.policyhandlers.AbstractBindingBuilder.policyNotAsserted(AbstractBindingBuilder.java:313)
+	at org.apache.cxf.ws.security.wss4j.policyhandlers.SymmetricBindingHandler.doSignBeforeEncrypt(SymmetricBindingHandler.java:310)
+	at org.apache.cxf.ws.security.wss4j.policyhandlers.SymmetricBindingHandler.handleBinding(SymmetricBindingHandler.java:124)
+	at org.apache.cxf.ws.security.wss4j.PolicyBasedWSS4JOutInterceptor$PolicyBasedWSS4JOutInterceptorInternal.handleMessage(PolicyBasedWSS4JOutInterceptor.java:173)
+	at org.apache.cxf.ws.security.wss4j.PolicyBasedWSS4JOutInterceptor$PolicyBasedWSS4JOutInterceptorInternal.handleMessage(PolicyBasedWSS4JOutInterceptor.java:90)
 	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:272)
-	at org.apache.cxf.interceptor.AbstractFaultChainInitiatorObserver.onMessage(AbstractFaultChainInitiatorObserver.java:113)
-	at org.apache.cxf.binding.soap.interceptor.CheckFaultInterceptor.handleMessage(CheckFaultInterceptor.java:69)
-	at org.apache.cxf.binding.soap.interceptor.CheckFaultInterceptor.handleMessage(CheckFaultInterceptor.java:34)
-	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:272)
-	at org.apache.cxf.endpoint.ClientImpl.onMessage(ClientImpl.java:845)
-	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.handleResponseInternal(HTTPConduit.java:1624)
-	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.handleResponse(HTTPConduit.java:1513)
-	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.close(HTTPConduit.java:1318)
-	at org.apache.cxf.io.CacheAndWriteOutputStream.postClose(CacheAndWriteOutputStream.java:56)
-	at org.apache.cxf.io.CachedOutputStream.close(CachedOutputStream.java:223)
-	at org.apache.cxf.transport.AbstractConduit.close(AbstractConduit.java:56)
-	at org.apache.cxf.transport.http.HTTPConduit.close(HTTPConduit.java:632)
-	at org.apache.cxf.interceptor.MessageSenderInterceptor$MessageSenderEndingInterceptor.handleMessage(MessageSenderInterceptor.java:62)
+	at org.apache.cxf.endpoint.ClientImpl.doInvoke(ClientImpl.java:570)
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:479)
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:382)
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:335)
+	at org.apache.cxf.ws.security.trust.AbstractSTSClient.issue(AbstractSTSClient.java:782)
+	at org.apache.cxf.ws.security.trust.STSClient.requestSecurityToken(STSClient.java:62)
+	at org.apache.cxf.ws.security.trust.STSClient.requestSecurityToken(STSClient.java:56)
+	at org.apache.cxf.ws.security.trust.STSClient.requestSecurityToken(STSClient.java:52)
+	at org.apache.cxf.ws.security.policy.interceptors.SecureConversationOutInterceptor.issueToken(SecureConversationOutInterceptor.java:167)
+	at org.apache.cxf.ws.security.policy.interceptors.SecureConversationOutInterceptor.handleMessage(SecureConversationOutInterceptor.java:69)
+	at org.apache.cxf.ws.security.policy.interceptors.SecureConversationOutInterceptor.handleMessage(SecureConversationOutInterceptor.java:44)
 	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:272)
 	at org.apache.cxf.endpoint.ClientImpl.doInvoke(ClientImpl.java:570)
 	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:479)
@@ -197,7 +197,7 @@ Caused by: org.apache.cxf.binding.soap.SoapFault: An error was discovered proces
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\User\AppData\Local\Temp\testng-eclipse-585413574\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\User\AppData\Local\Temp\testng-eclipse-982190308\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -206,11 +206,7 @@ Caused by: org.apache.cxf.binding.soap.SoapFault: An error was discovered proces
 &lt;suite name=&quot;Default suite&quot;&gt;
   &lt;test verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.example.tutorial.ws.integration.CardFraudulentServiceTest&quot;&gt;
-        &lt;methods&gt;
-          &lt;include name=&quot;basicTest&quot;/&gt;
-        &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- com.example.tutorial.ws.integration.CardFraudulentServiceTest --&gt;
+      &lt;class name=&quot;com.aes.service.accounts.integration.ConsultarFraudesTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -261,13 +257,13 @@ data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'basicTest')
-data.setCell(0, 2, 'com.example.tutorial.ws.integration.CardFraudulentServiceTest')
-data.setCell(0, 3, 21625);
+data.setCell(0, 2, 'com.aes.service.accounts.integration.ConsultarFraudesTest')
+data.setCell(0, 3, 30377);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 21 seconds</span>
+              <span class="suite-total-time">Total running time: 30 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -293,32 +289,32 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.example.tutorial.ws.integration.CardFraudulentServiceTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.aes.service.accounts.integration.ConsultarFraudesTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">springTestContextBeforeTestClass</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-class before">
                 <span class="method-name">springTestContextPrepareTestInstance</span>
-                <span class="method-start">16 ms</span>
+                <span class="method-start">17 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
-                <span class="method-name">springTestContextBeforeTestMethod(public void com.example.tutorial.ws.integration.CardFraudulentServiceTest.basicTest() throws java.ne...)</span>
-                <span class="method-start">2473 ms</span>
+                <span class="method-name">springTestContextBeforeTestMethod(public void com.aes.service.accounts.integration.ConsultarFraudesTest.basicTest())</span>
+                <span class="method-start">2472 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">basicTest</span>
-                <span class="method-start">2474 ms</span>
+                <span class="method-start">2473 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">springTestContextAfterTestMethod(public void com.example.tutorial.ws.integration.CardFraudulentServiceTest.basicTest() throws java.ne...)</span>
-                <span class="method-start">24112 ms</span>
+                <span class="method-name">springTestContextAfterTestMethod(public void com.aes.service.accounts.integration.ConsultarFraudesTest.basicTest())</span>
+                <span class="method-start">32863 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">springTestContextAfterTestClass</span>
-                <span class="method-start">24115 ms</span>
+                <span class="method-start">32865 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

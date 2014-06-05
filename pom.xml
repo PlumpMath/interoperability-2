@@ -239,9 +239,9 @@
                       </execution>
                </executions>
 		       <configuration>
-			       <packageName>com.aes.service.accounts.model</packageName>			        
+			       <packageName>com.aes.service.accounts.fraudquery</packageName>			        
 					<wsdlUrls>
-                      <wsdlUrl>${basedir}/src/main/resources/wsdl/services/CardFraudulentV3.wsdl</wsdlUrl>					
+                      <wsdlUrl>${basedir}/src/main/resources/wsdl/services/ConsultarFraudes.wsdl</wsdlUrl>					
 					</wsdlUrls>
 					<sourceDestDir>${basedir}/src/main/java</sourceDestDir>
 			        <destDir>C:/EntornoSimon/ServiciosSimon/</destDir>

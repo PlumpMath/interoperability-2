@@ -112,7 +112,7 @@ http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 		<prop key="org.apache.ws.security.crypto.merlin.truststore.type">jks</prop>
 	</util:properties>
 	 -->
-	 
+	 <!-- 
 	 <util:properties id="keystoreProperties">
 		<prop key="org.apache.ws.security.crypto.provider">org.apache.ws.security.components.crypto.Merlin</prop>
 		<prop key="org.apache.ws.security.crypto.merlin.keystore.type">jks</prop>
@@ -120,6 +120,18 @@ http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 		<prop key="org.apache.ws.security.crypto.merlin.keystore.alias">serverkey</prop>
 		<prop key="org.apache.ws.security.crypto.merlin.file">/var/lib/openshift/536f990fe0b8cdfb690002b7/app-root/runtime/repo/server.keystore</prop>
 		<prop key="org.apache.ws.security.crypto.merlin.truststore.file">/var/lib/openshift/536f990fe0b8cdfb690002b7/app-root/runtime/repo/server.keystore</prop>
+		<prop key="org.apache.ws.security.crypto.merlin.truststore.password">nosecret</prop>
+		<prop key="org.apache.ws.security.crypto.merlin.truststore.type">jks</prop>
+	</util:properties>
+	-->
+	
+	 <util:properties id="keystoreProperties">
+		<prop key="org.apache.ws.security.crypto.provider">org.apache.ws.security.components.crypto.Merlin</prop>
+		<prop key="org.apache.ws.security.crypto.merlin.keystore.type">jks</prop>
+		<prop key="org.apache.ws.security.crypto.merlin.keystore.password">nosecret</prop>
+		<prop key="org.apache.ws.security.crypto.merlin.keystore.alias">serverkey</prop>
+		<prop key="org.apache.ws.security.crypto.merlin.file">E:/java/git/jbossews/server.keystore</prop>
+		<prop key="org.apache.ws.security.crypto.merlin.truststore.file">E:/java/git/jbossews/server.keystore</prop>
 		<prop key="org.apache.ws.security.crypto.merlin.truststore.password">nosecret</prop>
 		<prop key="org.apache.ws.security.crypto.merlin.truststore.type">jks</prop>
 	</util:properties>

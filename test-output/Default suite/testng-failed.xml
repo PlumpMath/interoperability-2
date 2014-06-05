@@ -3,7 +3,7 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.example.tutorial.ws.integration.CardFraudulentServiceTest">
+      <class name="com.aes.service.accounts.integration.ConsultarFraudesTest">
         <methods>
           <include name="springTestContextAfterTestClass"/>
           <include name="springTestContextBeforeTestClass"/>
@@ -12,7 +12,7 @@
           <include name="springTestContextAfterTestMethod"/>
           <include name="basicTest"/>
         </methods>
-      </class> <!-- com.example.tutorial.ws.integration.CardFraudulentServiceTest -->
+      </class> <!-- com.aes.service.accounts.integration.ConsultarFraudesTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
