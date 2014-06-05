@@ -48,7 +48,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\User\AppData\Local\Temp\testng-eclipse-982190308\testng-customsuite.xml</span>
+                    <span>C:\Users\13719643\AppData\Local\Temp\testng-eclipse--1930348770\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -127,21 +127,21 @@
                   <a name="basicTest">
                   </a> <!-- basicTest -->
                   <span class="method-name">basicTest</span>
-                  <div class="stack-trace">javax.xml.ws.soap.SOAPFaultException: No signature token
+                  <div class="stack-trace">javax.xml.ws.soap.SOAPFaultException: Index: 0, Size: 0
 	at org.apache.cxf.jaxws.JaxWsClientProxy.invoke(JaxWsClientProxy.java:157)
-	at $Proxy45.getCardStatus(Unknown Source)
-	at com.aes.service.accounts.integration.ConsultarFraudesTest.basicTest(ConsultarFraudesTest.java:27)
+	at com.sun.proxy.$Proxy45.getCardStatus(Unknown Source)
+	at com.aes.service.accounts.integration.ConsultarFraudesTest.basicTest(ConsultarFraudesTest.java:23)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:601)
+	at java.lang.reflect.Method.invoke(Method.java:606)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
 	at org.testng.internal.MethodInvocationHelper$1.runTestMethod(MethodInvocationHelper.java:200)
 	at org.springframework.test.context.testng.AbstractTestNGSpringContextTests.run(AbstractTestNGSpringContextTests.java:155)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:601)
+	at java.lang.reflect.Method.invoke(Method.java:606)
 	at org.testng.internal.MethodInvocationHelper.invokeHookable(MethodInvocationHelper.java:212)
 	at org.testng.internal.Invoker.invokeMethod(Invoker.java:707)
 	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
@@ -162,26 +162,73 @@
 	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-Caused by: org.apache.cxf.ws.policy.PolicyException: No signature token
-	at org.apache.cxf.ws.security.wss4j.policyhandlers.AbstractBindingBuilder.policyNotAsserted(AbstractBindingBuilder.java:313)
-	at org.apache.cxf.ws.security.wss4j.policyhandlers.SymmetricBindingHandler.doSignBeforeEncrypt(SymmetricBindingHandler.java:310)
-	at org.apache.cxf.ws.security.wss4j.policyhandlers.SymmetricBindingHandler.handleBinding(SymmetricBindingHandler.java:124)
-	at org.apache.cxf.ws.security.wss4j.PolicyBasedWSS4JOutInterceptor$PolicyBasedWSS4JOutInterceptorInternal.handleMessage(PolicyBasedWSS4JOutInterceptor.java:173)
-	at org.apache.cxf.ws.security.wss4j.PolicyBasedWSS4JOutInterceptor$PolicyBasedWSS4JOutInterceptorInternal.handleMessage(PolicyBasedWSS4JOutInterceptor.java:90)
-	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:272)
-	at org.apache.cxf.endpoint.ClientImpl.doInvoke(ClientImpl.java:570)
-	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:479)
-	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:382)
-	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:335)
-	at org.apache.cxf.ws.security.trust.AbstractSTSClient.issue(AbstractSTSClient.java:782)
-	at org.apache.cxf.ws.security.trust.STSClient.requestSecurityToken(STSClient.java:62)
-	at org.apache.cxf.ws.security.trust.STSClient.requestSecurityToken(STSClient.java:56)
-	at org.apache.cxf.ws.security.trust.STSClient.requestSecurityToken(STSClient.java:52)
-	at org.apache.cxf.ws.security.policy.interceptors.SecureConversationOutInterceptor.issueToken(SecureConversationOutInterceptor.java:167)
-	at org.apache.cxf.ws.security.policy.interceptors.SecureConversationOutInterceptor.handleMessage(SecureConversationOutInterceptor.java:69)
-	at org.apache.cxf.ws.security.policy.interceptors.SecureConversationOutInterceptor.handleMessage(SecureConversationOutInterceptor.java:44)
-	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:272)
-	at org.apache.cxf.endpoint.ClientImpl.doInvoke(ClientImpl.java:570)
+Caused by: java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.ArrayList.rangeCheck(ArrayList.java:604)
+	at java.util.ArrayList.get(ArrayList.java:382)
+	at org.apache.cxf.ws.security.policy.builders.ProtectionTokenBuilder.processAlternative(ProtectionTokenBuilder.java:72)
+	at org.apache.cxf.ws.security.policy.builders.ProtectionTokenBuilder.build(ProtectionTokenBuilder.java:63)
+	at org.apache.cxf.ws.security.policy.builders.ProtectionTokenBuilder.build(ProtectionTokenBuilder.java:41)
+	at org.apache.neethi.AssertionBuilderFactoryImpl.invokeBuilder(AssertionBuilderFactoryImpl.java:138)
+	at org.apache.neethi.AssertionBuilderFactoryImpl.build(AssertionBuilderFactoryImpl.java:117)
+	at org.apache.neethi.PolicyBuilder.processOperationElement(PolicyBuilder.java:224)
+	at org.apache.neethi.PolicyBuilder.getPolicyOperator(PolicyBuilder.java:174)
+	at org.apache.neethi.PolicyBuilder.getPolicy(PolicyBuilder.java:124)
+	at org.apache.cxf.ws.security.policy.builders.SymmetricBindingBuilder.build(SymmetricBindingBuilder.java:61)
+	at org.apache.cxf.ws.security.policy.builders.SymmetricBindingBuilder.build(SymmetricBindingBuilder.java:43)
+	at org.apache.neethi.AssertionBuilderFactoryImpl.invokeBuilder(AssertionBuilderFactoryImpl.java:138)
+	at org.apache.neethi.AssertionBuilderFactoryImpl.build(AssertionBuilderFactoryImpl.java:117)
+	at org.apache.neethi.PolicyBuilder.processOperationElement(PolicyBuilder.java:224)
+	at org.apache.neethi.PolicyBuilder.getPolicyOperator(PolicyBuilder.java:174)
+	at org.apache.neethi.PolicyBuilder.getPolicy(PolicyBuilder.java:124)
+	at org.apache.cxf.ws.security.policy.builders.SecureConversationTokenBuilder.build(SecureConversationTokenBuilder.java:111)
+	at org.apache.cxf.ws.security.policy.builders.SecureConversationTokenBuilder.build(SecureConversationTokenBuilder.java:39)
+	at org.apache.neethi.AssertionBuilderFactoryImpl.invokeBuilder(AssertionBuilderFactoryImpl.java:138)
+	at org.apache.neethi.AssertionBuilderFactoryImpl.build(AssertionBuilderFactoryImpl.java:117)
+	at org.apache.neethi.PolicyBuilder.processOperationElement(PolicyBuilder.java:224)
+	at org.apache.neethi.PolicyBuilder.getPolicyOperator(PolicyBuilder.java:174)
+	at org.apache.neethi.PolicyBuilder.getPolicy(PolicyBuilder.java:124)
+	at org.apache.cxf.ws.security.policy.builders.ProtectionTokenBuilder.build(ProtectionTokenBuilder.java:59)
+	at org.apache.cxf.ws.security.policy.builders.ProtectionTokenBuilder.build(ProtectionTokenBuilder.java:41)
+	at org.apache.neethi.AssertionBuilderFactoryImpl.invokeBuilder(AssertionBuilderFactoryImpl.java:138)
+	at org.apache.neethi.AssertionBuilderFactoryImpl.build(AssertionBuilderFactoryImpl.java:117)
+	at org.apache.neethi.PolicyBuilder.processOperationElement(PolicyBuilder.java:224)
+	at org.apache.neethi.PolicyBuilder.getPolicyOperator(PolicyBuilder.java:174)
+	at org.apache.neethi.PolicyBuilder.getPolicy(PolicyBuilder.java:124)
+	at org.apache.cxf.ws.security.policy.builders.SymmetricBindingBuilder.build(SymmetricBindingBuilder.java:61)
+	at org.apache.cxf.ws.security.policy.builders.SymmetricBindingBuilder.build(SymmetricBindingBuilder.java:43)
+	at org.apache.neethi.AssertionBuilderFactoryImpl.invokeBuilder(AssertionBuilderFactoryImpl.java:138)
+	at org.apache.neethi.AssertionBuilderFactoryImpl.build(AssertionBuilderFactoryImpl.java:117)
+	at org.apache.neethi.PolicyBuilder.processOperationElement(PolicyBuilder.java:224)
+	at org.apache.neethi.PolicyBuilder.getAllOperator(PolicyBuilder.java:184)
+	at org.apache.neethi.PolicyBuilder.processOperationElement(PolicyBuilder.java:217)
+	at org.apache.neethi.PolicyBuilder.getExactlyOneOperator(PolicyBuilder.java:180)
+	at org.apache.neethi.PolicyBuilder.processOperationElement(PolicyBuilder.java:215)
+	at org.apache.neethi.PolicyBuilder.getPolicyOperator(PolicyBuilder.java:174)
+	at org.apache.neethi.PolicyBuilder.getPolicy(PolicyBuilder.java:124)
+	at org.apache.cxf.ws.policy.attachment.reference.LocalServiceModelReferenceResolver.resolveReference(LocalServiceModelReferenceResolver.java:53)
+	at org.apache.cxf.ws.policy.attachment.wsdl11.Wsdl11AttachmentPolicyProvider.resolveLocal(Wsdl11AttachmentPolicyProvider.java:292)
+	at org.apache.cxf.ws.policy.attachment.wsdl11.Wsdl11AttachmentPolicyProvider.resolveReference(Wsdl11AttachmentPolicyProvider.java:272)
+	at org.apache.cxf.ws.policy.attachment.wsdl11.Wsdl11AttachmentPolicyProvider.getElementPolicy(Wsdl11AttachmentPolicyProvider.java:220)
+	at org.apache.cxf.ws.policy.attachment.wsdl11.Wsdl11AttachmentPolicyProvider.getElementPolicy(Wsdl11AttachmentPolicyProvider.java:168)
+	at org.apache.cxf.ws.policy.attachment.wsdl11.Wsdl11AttachmentPolicyProvider.getElementPolicy(Wsdl11AttachmentPolicyProvider.java:161)
+	at org.apache.cxf.ws.policy.attachment.wsdl11.Wsdl11AttachmentPolicyProvider.getEffectivePolicy(Wsdl11AttachmentPolicyProvider.java:98)
+	at org.apache.cxf.ws.policy.PolicyEngineImpl.getAggregatedEndpointPolicy(PolicyEngineImpl.java:418)
+	at org.apache.cxf.ws.policy.EndpointPolicyImpl.initializePolicy(EndpointPolicyImpl.java:151)
+	at org.apache.cxf.ws.policy.EndpointPolicyImpl.initialize(EndpointPolicyImpl.java:139)
+	at org.apache.cxf.ws.policy.PolicyEngineImpl.createEndpointPolicyInfo(PolicyEngineImpl.java:550)
+	at org.apache.cxf.ws.policy.PolicyEngineImpl.getEndpointPolicy(PolicyEngineImpl.java:296)
+	at org.apache.cxf.ws.policy.PolicyEngineImpl.getClientEndpointPolicy(PolicyEngineImpl.java:279)
+	at org.apache.cxf.ws.policy.PolicyDataEngineImpl.getClientEndpointPolicy(PolicyDataEngineImpl.java:61)
+	at org.apache.cxf.transport.http.HTTPConduit.updateClientPolicy(HTTPConduit.java:314)
+	at org.apache.cxf.transport.http.HTTPConduit.&lt;init&gt;(HTTPConduit.java:300)
+	at org.apache.cxf.transport.http.URLConnectionHTTPConduit.&lt;init&gt;(URLConnectionHTTPConduit.java:68)
+	at org.apache.cxf.transport.http.HTTPTransportFactory.getConduit(HTTPTransportFactory.java:258)
+	at org.apache.cxf.binding.soap.SoapTransportFactory.getConduit(SoapTransportFactory.java:238)
+	at org.apache.cxf.binding.soap.SoapTransportFactory.getConduit(SoapTransportFactory.java:245)
+	at org.apache.cxf.endpoint.AbstractConduitSelector.getSelectedConduit(AbstractConduitSelector.java:103)
+	at org.apache.cxf.endpoint.UpfrontConduitSelector.prepare(UpfrontConduitSelector.java:63)
+	at org.apache.cxf.endpoint.ClientImpl.prepareConduitSelector(ClientImpl.java:896)
+	at org.apache.cxf.endpoint.ClientImpl.doInvoke(ClientImpl.java:565)
 	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:479)
 	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:382)
 	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:335)
@@ -197,7 +244,7 @@ Caused by: org.apache.cxf.ws.policy.PolicyException: No signature token
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\User\AppData\Local\Temp\testng-eclipse-982190308\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\13719643\AppData\Local\Temp\testng-eclipse--1930348770\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -206,7 +253,11 @@ Caused by: org.apache.cxf.ws.policy.PolicyException: No signature token
 &lt;suite name=&quot;Default suite&quot;&gt;
   &lt;test verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.aes.service.accounts.integration.ConsultarFraudesTest&quot;/&gt;
+      &lt;class name=&quot;com.aes.service.accounts.integration.ConsultarFraudesTest&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;basicTest&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- com.aes.service.accounts.integration.ConsultarFraudesTest --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -258,12 +309,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'basicTest')
 data.setCell(0, 2, 'com.aes.service.accounts.integration.ConsultarFraudesTest')
-data.setCell(0, 3, 30377);
+data.setCell(0, 3, 776);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 30 seconds</span>
+              <span class="suite-total-time">Total running time: 776 ms</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -296,25 +347,25 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="configuration-class before">
                 <span class="method-name">springTestContextPrepareTestInstance</span>
-                <span class="method-start">17 ms</span>
+                <span class="method-start">5 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">springTestContextBeforeTestMethod(public void com.aes.service.accounts.integration.ConsultarFraudesTest.basicTest())</span>
-                <span class="method-start">2472 ms</span>
+                <span class="method-start">814 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">basicTest</span>
-                <span class="method-start">2473 ms</span>
+                <span class="method-start">815 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">springTestContextAfterTestMethod(public void com.aes.service.accounts.integration.ConsultarFraudesTest.basicTest())</span>
-                <span class="method-start">32863 ms</span>
+                <span class="method-start">1597 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">springTestContextAfterTestClass</span>
-                <span class="method-start">32865 ms</span>
+                <span class="method-start">1601 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

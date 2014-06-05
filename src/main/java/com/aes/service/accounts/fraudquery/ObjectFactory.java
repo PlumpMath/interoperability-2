@@ -30,22 +30,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetCardStatusResponse }
-     * 
-     */
-    public GetCardStatusResponse createGetCardStatusResponse() {
-        return new GetCardStatusResponse();
-    }
-
-    /**
-     * Create an instance of {@link MsgRqHdrType }
-     * 
-     */
-    public MsgRqHdrType createMsgRqHdrType() {
-        return new MsgRqHdrType();
-    }
-
-    /**
      * Create an instance of {@link StatusType }
      * 
      */
@@ -54,19 +38,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link CardStatusInqRqType }
+     * Create an instance of {@link ContextRqHdrType }
      * 
      */
-    public CardStatusInqRqType createCardStatusInqRqType() {
-        return new CardStatusInqRqType();
+    public ContextRqHdrType createContextRqHdrType() {
+        return new ContextRqHdrType();
     }
 
     /**
-     * Create an instance of {@link GetCardStatusOut }
+     * Create an instance of {@link GetCardStatusResponse }
      * 
      */
-    public GetCardStatusOut createGetCardStatusOut() {
-        return new GetCardStatusOut();
+    public GetCardStatusResponse createGetCardStatusResponse() {
+        return new GetCardStatusResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetCardStatus }
+     * 
+     */
+    public GetCardStatus createGetCardStatus() {
+        return new GetCardStatus();
     }
 
     /**
@@ -75,14 +67,6 @@ public class ObjectFactory {
      */
     public CardStatusRecType createCardStatusRecType() {
         return new CardStatusRecType();
-    }
-
-    /**
-     * Create an instance of {@link GetCardStatusInp }
-     * 
-     */
-    public GetCardStatusInp createGetCardStatusInp() {
-        return new GetCardStatusInp();
     }
 
     /**
@@ -102,19 +86,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ContextRqHdrType }
+     * Create an instance of {@link CardStatusInqRqType }
      * 
      */
-    public ContextRqHdrType createContextRqHdrType() {
-        return new ContextRqHdrType();
-    }
-
-    /**
-     * Create an instance of {@link GetCardStatus }
-     * 
-     */
-    public GetCardStatus createGetCardStatus() {
-        return new GetCardStatus();
+    public CardStatusInqRqType createCardStatusInqRqType() {
+        return new CardStatusInqRqType();
     }
 
     /**
@@ -123,6 +99,30 @@ public class ObjectFactory {
      */
     public CardKeysType createCardKeysType() {
         return new CardKeysType();
+    }
+
+    /**
+     * Create an instance of {@link MsgRqHdrType }
+     * 
+     */
+    public MsgRqHdrType createMsgRqHdrType() {
+        return new MsgRqHdrType();
+    }
+
+    /**
+     * Create an instance of {@link GetCardStatusInp }
+     * 
+     */
+    public GetCardStatusInp createGetCardStatusInp() {
+        return new GetCardStatusInp();
+    }
+
+    /**
+     * Create an instance of {@link GetCardStatusOut }
+     * 
+     */
+    public GetCardStatusOut createGetCardStatusOut() {
+        return new GetCardStatusOut();
     }
 
     /**

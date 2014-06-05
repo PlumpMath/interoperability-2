@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.1
  * 
  */
-@WebServiceClient(name = "ConsultarFraudes", targetNamespace = "http://com/aes/service/accounts/CardStatusInquiry", wsdlLocation = "file:/E:/java/git/jbossews/src/main/resources/wsdl/services/ConsultarFraudes.wsdl")
+@WebServiceClient(name = "ConsultarFraudes", targetNamespace = "http://com/aes/service/accounts/CardStatusInquiry", wsdlLocation = "file:/C:/EntornoSimon/git/interoperability/src/main/resources/wsdl/services/ConsultarFraudes.wsdl")
 public class ConsultarFraudes
     extends Service
 {
@@ -30,9 +30,9 @@ public class ConsultarFraudes
         try {
             URL baseUrl;
             baseUrl = com.aes.service.accounts.fraudquery.ConsultarFraudes.class.getResource(".");
-            url = new URL(baseUrl, "file:/E:/java/git/jbossews/src/main/resources/wsdl/services/ConsultarFraudes.wsdl");
+            url = new URL(baseUrl, "file:/C:/EntornoSimon/git/interoperability/src/main/resources/wsdl/services/ConsultarFraudes.wsdl");
         } catch (MalformedURLException e) {
-            logger.warning("Failed to create URL for the wsdl Location: 'file:/E:/java/git/jbossews/src/main/resources/wsdl/services/ConsultarFraudes.wsdl', retrying as a local file");
+            logger.warning("Failed to create URL for the wsdl Location: 'file:/C:/EntornoSimon/git/interoperability/src/main/resources/wsdl/services/ConsultarFraudes.wsdl', retrying as a local file");
             logger.warning(e.getMessage());
         }
         CONSULTARFRAUDES_WSDL_LOCATION = url;

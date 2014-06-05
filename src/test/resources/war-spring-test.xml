@@ -60,8 +60,7 @@ http://jbossews-interoperability.rhcloud.com/services/CardFraudulentServiceV3
 	<jaxws:client id="testClient" serviceClass="com.aes.service.accounts.CardFraudulentService"
 		address="http://localhost:8181/interoperability/services/CardFraudulentServiceV3" wsdlLocation="/wsdl/services/CardFraudulentV3.wsdl"
 		serviceName="s:CardFraudulentService" endpointName="s:CardFraudulentPort" xmlns:s="http://com/aes/service/accounts/CardFraudulent">
-		<jaxws:properties>
-			<entry key="ws-security.callback-handler" value-ref="keystorePasswordCallback"/>        
+		<jaxws:properties>			        
 			<entry key="ws-security.encryption.properties" value-ref="keystoreProperties"/>
 			<entry key="ws-security.signature.properties" value-ref="keystoreProperties"/>
 			<entry key="ws-security.encryption.username" value="serverkey"/>			
@@ -82,13 +81,13 @@ http://jbossews-interoperability.rhcloud.com/services/CardFraudulentServiceV3
 	<jaxws:client id="testClientConsultaFraudes" serviceClass="com.aes.service.accounts.fraudquery.IConsultarFraudes"
 		address="http://localhost:8181/interoperability/services/CardFraudulentServiceV3" wsdlLocation="/wsdl/services/ConsultarFraudes.wsdl"
 		serviceName="s:ConsultarFraudes" endpointName="s:WSHttpBinding_IConsultarFraudes" xmlns:s="http://com/aes/service/accounts/CardStatusInquiry">
-		<jaxws:properties>
-			<entry key="ws-security.callback-handler" value-ref="keystorePasswordCallback"/>        
+		<jaxws:properties>			        
 			<entry key="ws-security.encryption.properties" value-ref="keystoreProperties"/>
 			<entry key="ws-security.signature.properties" value-ref="keystoreProperties"/>
-			<entry key="ws-security.encryption.username" value="serverkey"/>			
+			<entry key="ws-security.encryption.username" value="aesclient"/>					
 			 <entry key="ws-security.signature.username" value="clientkey"/>			 
-      		 
+      		
+      		  
       		<entry key="ws-security.callback-handler"  value="com.aes.service.accounts.security.ClientCallback"/>
 			
 		</jaxws:properties>
