@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="12046" started-at="2014-06-04T21:59:41Z" finished-at="2014-06-04T21:59:53Z">
+    <groups>
+      <group name="remote-integration">
+        <method signature="CardFraudulentServiceTest.basicTest()[pri:0, instance:com.example.tutorial.ws.integration.CardFraudulentServiceTest@3f980d]" name="basicTest" class="com.example.tutorial.ws.integration.CardFraudulentServiceTest"/>
+      </group> <!-- remote-integration -->
+    </groups>
+    <test name="Default test" duration-ms="12046" started-at="2014-06-04T21:59:41Z" finished-at="2014-06-04T21:59:53Z">
+      <class name="com.example.tutorial.ws.integration.CardFraudulentServiceTest">
+        <test-method status="PASS" signature="springTestContextBeforeTestClass()[pri:0, instance:com.example.tutorial.ws.integration.CardFraudulentServiceTest@3f980d]" name="springTestContextBeforeTestClass" is-config="true" duration-ms="5" started-at="2014-06-04T16:59:41Z" finished-at="2014-06-04T16:59:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestClass -->
+        <test-method status="PASS" signature="springTestContextPrepareTestInstance()[pri:0, instance:com.example.tutorial.ws.integration.CardFraudulentServiceTest@3f980d]" name="springTestContextPrepareTestInstance" is-config="true" duration-ms="900" started-at="2014-06-04T16:59:41Z" depends-on-methods="org.springframework.test.context.testng.AbstractTestNGSpringContextTests.springTestContextBeforeTestClass" finished-at="2014-06-04T16:59:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextPrepareTestInstance -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.example.tutorial.ws.integration.CardFraudulentServiceTest@3f980d]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="1" started-at="2014-06-04T16:59:42Z" finished-at="2014-06-04T16:59:42Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.example.tutorial.ws.integration.CardFraudulentServiceTest.basicTest() throws java.net.URISyntaxException,org.wtf.interoperability.ws.vo.RequiredHeaderMissingFault,org.wtf.interoperability.ws.vo.SystemUnavailableFault]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="basicTest()[pri:0, instance:com.example.tutorial.ws.integration.CardFraudulentServiceTest@3f980d]" name="basicTest" duration-ms="11128" started-at="2014-06-04T16:59:42Z" finished-at="2014-06-04T16:59:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- basicTest -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.example.tutorial.ws.integration.CardFraudulentServiceTest@3f980d]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="1" started-at="2014-06-04T16:59:53Z" finished-at="2014-06-04T16:59:53Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.example.tutorial.ws.integration.CardFraudulentServiceTest.basicTest() throws java.net.URISyntaxException,org.wtf.interoperability.ws.vo.RequiredHeaderMissingFault,org.wtf.interoperability.ws.vo.SystemUnavailableFault]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="springTestContextAfterTestClass()[pri:0, instance:com.example.tutorial.ws.integration.CardFraudulentServiceTest@3f980d]" name="springTestContextAfterTestClass" is-config="true" duration-ms="0" started-at="2014-06-04T16:59:53Z" finished-at="2014-06-04T16:59:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestClass -->
+      </class> <!-- com.example.tutorial.ws.integration.CardFraudulentServiceTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

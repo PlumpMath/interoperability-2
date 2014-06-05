@@ -15,6 +15,7 @@
             http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
             http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 
+<!-- 
 	<bean id="TutorialPropertyPlaceholderConfigurer" class="org.springframework.beans.factory.config.JndiAwarePropertyPlaceholderConfigurer">
 		<property name="locations">
 			<list>
@@ -32,6 +33,7 @@
     	<constructor-arg value="${unitTest.testEndpointUrl}"/>
     </bean>
 
+ 
 	<bean id="keystorePasswordCallback" class="org.wtf.interoperability.ws.security.KeystorePasswordCallback">
 		<property name="passwords">
 			<map>
@@ -39,26 +41,31 @@
 			</map>
 		</property>
 	</bean>
+	 -->
 	
 	<util:properties id="keystoreProperties">
 		<prop key="org.apache.ws.security.crypto.provider">org.apache.ws.security.components.crypto.Merlin</prop>
 		<prop key="org.apache.ws.security.crypto.merlin.keystore.type">jks</prop>
-		<prop key="org.apache.ws.security.crypto.merlin.keystore.password">aes2014</prop>
-		<prop key="org.apache.ws.security.crypto.merlin.keystore.alias">myclientkey</prop>
-		<prop key="org.apache.ws.security.crypto.merlin.file">E:/java/git/jbossews/src/test/resources/clientKeystore.jks</prop>
-		<prop key="org.apache.ws.security.crypto.merlin.truststore.file">E:/java/git/jbossews/src/test/resources/clientKeystore.jks</prop>
-		<prop key="org.apache.ws.security.crypto.merlin.truststore.password">aes2014</prop>
+		<prop key="org.apache.ws.security.crypto.merlin.keystore.password">nosecret</prop>
+		<prop key="org.apache.ws.security.crypto.merlin.keystore.alias">clientkey</prop>
+		<prop key="org.apache.ws.security.crypto.merlin.file">C:/EntornoSimon/git/interoperability/src/main/resources/client.keystore</prop>
+		<prop key="org.apache.ws.security.crypto.merlin.truststore.file">C:/EntornoSimon/git/interoperability/src/main/resources/client.keystore</prop>
+		<prop key="org.apache.ws.security.crypto.merlin.truststore.password">nosecret</prop>
 		<prop key="org.apache.ws.security.crypto.merlin.truststore.type">jks</prop>
 	</util:properties>
 
-	<jaxws:client id="testClient" serviceClass="org.wtf.interoperability.ws.TutorialWebService"
-		address="${unitTest.testEndpointUrl}" wsdlLocation="/wsdl/TutorialService.wsdl"
-		serviceName="s:TutorialWebService" endpointName="s:TutorialWebServiceSOAP" xmlns:s="http://example.com/tutotial/">
+	<jaxws:client id="testClient" serviceClass="com.aes.service.accounts.CardFraudulentService"
+		address="http://localhost:8181/interoperability/services/CardFraudulentServiceV3" wsdlLocation="/wsdl/services/CardFraudulentV3.wsdl"
+		serviceName="s:CardFraudulentService" endpointName="s:CardFraudulentPort" xmlns:s="http://com/aes/service/accounts/CardFraudulent">
 		<jaxws:properties>
 			<entry key="ws-security.callback-handler" value-ref="keystorePasswordCallback"/>        
 			<entry key="ws-security.encryption.properties" value-ref="keystoreProperties"/>
 			<entry key="ws-security.signature.properties" value-ref="keystoreProperties"/>
-			<entry key="ws-security.encryption.username" value="myservicekey"/>
+			<entry key="ws-security.encryption.username" value="serverkey"/>			
+			 <entry key="ws-security.signature.username" value="clientkey"/>			 
+      		 
+      		<entry key="ws-security.callback-handler"  value="com.aes.service.accounts.security.ClientCallback"/>
+			
 		</jaxws:properties>
 		<jaxws:inInterceptors>
 			<bean class="org.apache.cxf.interceptor.LoggingInInterceptor" />

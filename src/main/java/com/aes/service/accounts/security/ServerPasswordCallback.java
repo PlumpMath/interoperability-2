@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.security.auth.callback.Callback;
 import javax.security.auth.callback.CallbackHandler;
 import javax.security.auth.callback.UnsupportedCallbackException;
+
 import org.apache.ws.security.WSPasswordCallback;
 
 public class ServerPasswordCallback implements CallbackHandler {
@@ -13,8 +14,8 @@ public class ServerPasswordCallback implements CallbackHandler {
             UnsupportedCallbackException {
         WSPasswordCallback pc = (WSPasswordCallback) callbacks[0];
 
-        if ("joe".equals(pc.getIdentifier())) {
-           pc.setPassword("master"); 
+        if ("aes".equals(pc.getIdentifier())) {
+           pc.setPassword("aes2014"); 
         }
     }
 }
