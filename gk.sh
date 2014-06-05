@@ -3,21 +3,24 @@
 find . -name '*.jks' | xargs rm
 
 # Set the values we'll use for the generation
-serverkeyalias=myservicekey
+serverkeyalias=serverkey
 serverkeypassword=aes2014
 serverstorepassword=aes2014
-serverkeystorename=src/main/resources/spring/local/serviceKeystore.jks
+serverkeystorename=server.keystore
 
-clientkeyalias=myclientkey
+clientkeyalias=clientkey
 clientkeypassword=aes2014
 clientstorepassword=aes2014
-clientkeystorename=src/test/resources/clientKeystore.jks
+clientkeystorename=client.keystore
 
 #SHA256withRSA
 
 # Generate the server and client keys
-keytool -genkey -alias $serverkeyalias -keyalg RSA  -storetype JKS  -sigalg SHA256withRSA -keypass $serverkeypassword -storepass $serverstorepassword -keystore $serverkeystorename -dname "cn=localhost" -validity 3650
-keytool -genkey -alias $clientkeyalias -keyalg RSA  -storetype JKS  -sigalg SHA256withRSA -keypass $clientkeypassword -storepass $clientstorepassword -keystore $clientkeystorename -dname "cn=clientuser" -validity 3650
+keytool -genkey -alias $serverkeyalias -keyalg RSA  -storetype JKS  -sigalg SHA1withRSA -keypass $serverkeypassword -storepass $serverstorepassword -keystore $serverkeystorename -dname "cn=localhost" -validity 3650
+keytool -genkey -alias $clientkeyalias -keyalg RSA  -storetype JKS  -sigalg SHA1withRSA -keypass $clientkeypassword -storepass $clientstorepassword -keystore $clientkeystorename -dname "cn=clientuser" -validity 3650
+
+#printf $serverkeystorename 
+printf "$clientkeyalias.cer\n"
 
 # Export the client key and import it to the server keystore
 keytool -export -rfc -keystore $clientkeystorename -storepass $clientstorepassword -alias $clientkeyalias -file $clientkeyalias.cer

@@ -46,6 +46,6 @@ public class CardFraudulentServiceTest extends AbstractTestNGSpringContextTests{
 		value3.setContextRqHdr(value4 );
 		value4.setClientDt("2014-05-21T09:00:00");
 		
-		getPort().report(modCardStatusRequest);
+		 getPort().report(modCardStatusRequest);
 	}
 }
