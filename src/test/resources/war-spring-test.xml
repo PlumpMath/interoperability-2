@@ -42,18 +42,9 @@
 		</property>
 	</bean>
 	
-	<util:properties id="keystoreProperties">
-		<prop key="org.apache.ws.security.crypto.provider">org.apache.ws.security.components.crypto.Merlin</prop>
-		<prop key="org.apache.ws.security.crypto.merlin.keystore.type">jks</prop>
-		<prop key="org.apache.ws.security.crypto.merlin.keystore.password">nosecret</prop>
-		<prop key="org.apache.ws.security.crypto.merlin.keystore.alias">clientkey</prop>
-		<prop key="org.apache.ws.security.crypto.merlin.file">E:/java/git/jbossews/client.keystore</prop>
-		<prop key="org.apache.ws.security.crypto.merlin.truststore.file">E:/java/git/jbossews/client.keystore</prop>
-		<prop key="org.apache.ws.security.crypto.merlin.truststore.password">nosecret</prop>
-		<prop key="org.apache.ws.security.crypto.merlin.truststore.type">jks</prop>
-	</util:properties>
+
 	
-	 -->
+	
 	
 	<util:properties id="keystoreProperties">
 		<prop key="org.apache.ws.security.crypto.provider">org.apache.ws.security.components.crypto.Merlin</prop>
@@ -65,7 +56,20 @@
 		<prop key="org.apache.ws.security.crypto.merlin.truststore.password">nosecret</prop>
 		<prop key="org.apache.ws.security.crypto.merlin.truststore.type">jks</prop>
 	</util:properties>
+	
+	 -->
 
+	<util:properties id="keystoreProperties">
+		<prop key="org.apache.ws.security.crypto.provider">org.apache.ws.security.components.crypto.Merlin</prop>
+		<prop key="org.apache.ws.security.crypto.merlin.keystore.type">jks</prop>
+		<prop key="org.apache.ws.security.crypto.merlin.keystore.password">nosecret</prop>
+		<prop key="org.apache.ws.security.crypto.merlin.keystore.alias">clientkey</prop>
+		<prop key="org.apache.ws.security.crypto.merlin.file">E:/java/git/jbossews/client.keystore</prop>
+		<prop key="org.apache.ws.security.crypto.merlin.truststore.file">E:/java/git/jbossews/client.keystore</prop>
+		<prop key="org.apache.ws.security.crypto.merlin.truststore.password">nosecret</prop>
+		<prop key="org.apache.ws.security.crypto.merlin.truststore.type">jks</prop>
+	</util:properties>
+	
 <!-- 
 http://jbossews-interoperability.rhcloud.com/services/CardFraudulentServiceV3
 http://localhost:8181/interoperability/services/CardFraudulentServiceV3
@@ -90,16 +94,20 @@ http://localhost:8181/interoperability/services/CardFraudulentServiceV3
 		</jaxws:outInterceptors>
 	</jaxws:client>
 	
-	
+	<!--
+	http://25.31.25.12/BancoB_FraudesService/ConsultarFraudes.svc
+	http://localhost:51339/ConsultarFraudes.svc 
+	 -->
 	<jaxws:client id="testClientConsultaFraudes" serviceClass="com.aes.service.accounts.fraudquery.IConsultarFraudes"
-		address="http://localhost:8181/interoperability/services/CardFraudulentServiceV3" wsdlLocation="/wsdl/services/ConsultarFraudes.wsdl"
-		serviceName="s:ConsultarFraudes" endpointName="s:WSHttpBinding_IConsultarFraudes" xmlns:s="http://com/aes/service/accounts/CardStatusInquiry">
+		address="http://25.31.25.12/BancoB_FraudesService/ConsultarFraudes.svc" wsdlLocation="/wsdl/services/ConsultarFraudes.svc"
+		serviceName="s:ConsultarFraudes" endpointName="s:WSHttpBinding_IConsultarFraudes" xmlns:s="http://tempuri.org/">
 		<jaxws:properties>			        
 			<entry key="ws-security.encryption.properties" value-ref="keystoreProperties"/>
 			<entry key="ws-security.signature.properties" value-ref="keystoreProperties"/>
-			<entry key="ws-security.encryption.username" value="aesclient"/>					
+			<entry key="ws-security.encryption.username" value="aesserverkey"/>	
+			<!-- 				
 			 <entry key="ws-security.signature.username" value="clientkey"/>			 
-      		
+      		 -->
       		  
       		<entry key="ws-security.callback-handler"  value="com.aes.service.accounts.security.ClientCallback"/>
 			

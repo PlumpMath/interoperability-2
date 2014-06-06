@@ -2,53 +2,53 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="13147" started-at="2014-06-05T15:04:17Z" finished-at="2014-06-05T15:04:30Z">
+  <suite name="Default suite" duration-ms="19282" started-at="2014-06-06T06:44:42Z" finished-at="2014-06-06T06:45:01Z">
     <groups>
       <group name="remote-integration">
-        <method signature="CardFraudulentServiceTest.basicTest()[pri:0, instance:com.aes.service.accounts.integration.CardFraudulentServiceTest@1b3114]" name="basicTest" class="com.aes.service.accounts.integration.CardFraudulentServiceTest"/>
+        <method signature="ConsultarFraudesTest.basicTest()[pri:0, instance:com.aes.service.accounts.integration.ConsultarFraudesTest@546a4fda]" name="basicTest" class="com.aes.service.accounts.integration.ConsultarFraudesTest"/>
       </group> <!-- remote-integration -->
     </groups>
-    <test name="Default test" duration-ms="13147" started-at="2014-06-05T15:04:17Z" finished-at="2014-06-05T15:04:30Z">
-      <class name="com.aes.service.accounts.integration.CardFraudulentServiceTest">
-        <test-method status="PASS" signature="springTestContextBeforeTestClass()[pri:0, instance:com.aes.service.accounts.integration.CardFraudulentServiceTest@1b3114]" name="springTestContextBeforeTestClass" is-config="true" duration-ms="5" started-at="2014-06-05T10:04:17Z" finished-at="2014-06-05T10:04:17Z">
+    <test name="Default test" duration-ms="19282" started-at="2014-06-06T06:44:42Z" finished-at="2014-06-06T06:45:01Z">
+      <class name="com.aes.service.accounts.integration.ConsultarFraudesTest">
+        <test-method status="PASS" signature="springTestContextBeforeTestClass()[pri:0, instance:com.aes.service.accounts.integration.ConsultarFraudesTest@546a4fda]" name="springTestContextBeforeTestClass" is-config="true" duration-ms="17" started-at="2014-06-06T01:44:42Z" finished-at="2014-06-06T01:44:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- springTestContextBeforeTestClass -->
-        <test-method status="PASS" signature="springTestContextPrepareTestInstance()[pri:0, instance:com.aes.service.accounts.integration.CardFraudulentServiceTest@1b3114]" name="springTestContextPrepareTestInstance" is-config="true" duration-ms="795" started-at="2014-06-05T10:04:17Z" depends-on-methods="org.springframework.test.context.testng.AbstractTestNGSpringContextTests.springTestContextBeforeTestClass" finished-at="2014-06-05T10:04:18Z">
+        <test-method status="PASS" signature="springTestContextPrepareTestInstance()[pri:0, instance:com.aes.service.accounts.integration.ConsultarFraudesTest@546a4fda]" name="springTestContextPrepareTestInstance" is-config="true" duration-ms="2204" started-at="2014-06-06T01:44:42Z" depends-on-methods="org.springframework.test.context.testng.AbstractTestNGSpringContextTests.springTestContextBeforeTestClass" finished-at="2014-06-06T01:44:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- springTestContextPrepareTestInstance -->
-        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.aes.service.accounts.integration.CardFraudulentServiceTest@1b3114]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="0" started-at="2014-06-05T10:04:18Z" finished-at="2014-06-05T10:04:18Z">
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.aes.service.accounts.integration.ConsultarFraudesTest@546a4fda]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="1" started-at="2014-06-06T01:44:44Z" finished-at="2014-06-06T01:44:44Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.aes.service.accounts.integration.CardFraudulentServiceTest.basicTest()]]>
+                <![CDATA[public void com.aes.service.accounts.integration.ConsultarFraudesTest.basicTest()]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- springTestContextBeforeTestMethod -->
-        <test-method status="PASS" signature="basicTest()[pri:0, instance:com.aes.service.accounts.integration.CardFraudulentServiceTest@1b3114]" name="basicTest" duration-ms="12334" started-at="2014-06-05T10:04:18Z" finished-at="2014-06-05T10:04:30Z">
+        <test-method status="PASS" signature="basicTest()[pri:0, instance:com.aes.service.accounts.integration.ConsultarFraudesTest@546a4fda]" name="basicTest" duration-ms="17030" started-at="2014-06-06T01:44:44Z" finished-at="2014-06-06T01:45:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- basicTest -->
-        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.aes.service.accounts.integration.CardFraudulentServiceTest@1b3114]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="1" started-at="2014-06-05T10:04:30Z" finished-at="2014-06-05T10:04:30Z">
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.aes.service.accounts.integration.ConsultarFraudesTest@546a4fda]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="2" started-at="2014-06-06T01:45:01Z" finished-at="2014-06-06T01:45:01Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.aes.service.accounts.integration.CardFraudulentServiceTest.basicTest()]]>
+                <![CDATA[public void com.aes.service.accounts.integration.ConsultarFraudesTest.basicTest()]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- springTestContextAfterTestMethod -->
-        <test-method status="PASS" signature="springTestContextAfterTestClass()[pri:0, instance:com.aes.service.accounts.integration.CardFraudulentServiceTest@1b3114]" name="springTestContextAfterTestClass" is-config="true" duration-ms="0" started-at="2014-06-05T10:04:30Z" finished-at="2014-06-05T10:04:30Z">
+        <test-method status="PASS" signature="springTestContextAfterTestClass()[pri:0, instance:com.aes.service.accounts.integration.ConsultarFraudesTest@546a4fda]" name="springTestContextAfterTestClass" is-config="true" duration-ms="0" started-at="2014-06-06T01:45:01Z" finished-at="2014-06-06T01:45:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- springTestContextAfterTestClass -->
-      </class> <!-- com.aes.service.accounts.integration.CardFraudulentServiceTest -->
+      </class> <!-- com.aes.service.accounts.integration.ConsultarFraudesTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

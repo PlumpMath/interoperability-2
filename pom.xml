@@ -241,7 +241,7 @@
 		       <configuration>
 			       <packageName>com.aes.service.accounts.fraudquery</packageName>			        
 					<wsdlUrls>
-                      <wsdlUrl>${basedir}/src/main/resources/wsdl/services/ConsultarFraudes.wsdl</wsdlUrl>					
+                      <wsdlUrl>${basedir}/src/main/resources/wsdl/services/ConsultarFraudes.svc</wsdlUrl>					
 					</wsdlUrls>
 					<sourceDestDir>${basedir}/src/main/java</sourceDestDir>
 			        <destDir>C:/EntornoSimon/ServiciosSimon/</destDir>

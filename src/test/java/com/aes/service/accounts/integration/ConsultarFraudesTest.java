@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 
 import com.aes.service.accounts.fraudquery.CardStatusInqRqType;
 import com.aes.service.accounts.fraudquery.GetCardStatusInp;
+import com.aes.service.accounts.fraudquery.GetCardStatusOut;
 import com.aes.service.accounts.fraudquery.IConsultarFraudes;
 
 @ContextConfiguration(locations = {        
@@ -22,10 +23,12 @@ public class ConsultarFraudesTest  extends  AbstractTestNGSpringContextTests{
 
 	@Test(groups = "remote-integration")
 	public void basicTest()  {
+		
 		GetCardStatusInp value1 = new GetCardStatusInp();
 		CardStatusInqRqType value2 = new CardStatusInqRqType();
 		value2.setRqUID("10000000-1111-2222-3333-000000000000");
 		value1.setCardStatusInqRq(value2 );
-		getPort().getCardStatus(value1 );
+		GetCardStatusOut x= getPort().getCardStatus(value1 );
+		System.out.println(x.getCardStatusInqRs());
 	}
 }

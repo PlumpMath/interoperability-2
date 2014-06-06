@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.1
  * 
  */
-@WebServiceClient(name = "ConsultarFraudes", targetNamespace = "http://com/aes/service/accounts/CardStatusInquiry", wsdlLocation = "file:/C:/EntornoSimon/git/interoperability/src/main/resources/wsdl/services/ConsultarFraudes.wsdl")
+@WebServiceClient(name = "ConsultarFraudes", targetNamespace = "http://tempuri.org/", wsdlLocation = "file:/E:/java/git/jbossews/src/main/resources/wsdl/services/ConsultarFraudes.svc")
 public class ConsultarFraudes
     extends Service
 {
@@ -30,9 +30,9 @@ public class ConsultarFraudes
         try {
             URL baseUrl;
             baseUrl = com.aes.service.accounts.fraudquery.ConsultarFraudes.class.getResource(".");
-            url = new URL(baseUrl, "file:/C:/EntornoSimon/git/interoperability/src/main/resources/wsdl/services/ConsultarFraudes.wsdl");
+            url = new URL(baseUrl, "file:/E:/java/git/jbossews/src/main/resources/wsdl/services/ConsultarFraudes.svc");
         } catch (MalformedURLException e) {
-            logger.warning("Failed to create URL for the wsdl Location: 'file:/C:/EntornoSimon/git/interoperability/src/main/resources/wsdl/services/ConsultarFraudes.wsdl', retrying as a local file");
+            logger.warning("Failed to create URL for the wsdl Location: 'file:/E:/java/git/jbossews/src/main/resources/wsdl/services/ConsultarFraudes.svc', retrying as a local file");
             logger.warning(e.getMessage());
         }
         CONSULTARFRAUDES_WSDL_LOCATION = url;
@@ -43,7 +43,7 @@ public class ConsultarFraudes
     }
 
     public ConsultarFraudes() {
-        super(CONSULTARFRAUDES_WSDL_LOCATION, new QName("http://com/aes/service/accounts/CardStatusInquiry", "ConsultarFraudes"));
+        super(CONSULTARFRAUDES_WSDL_LOCATION, new QName("http://tempuri.org/", "ConsultarFraudes"));
     }
 
     /**
@@ -53,7 +53,7 @@ public class ConsultarFraudes
      */
     @WebEndpoint(name = "WSHttpBinding_IConsultarFraudes")
     public IConsultarFraudes getWSHttpBindingIConsultarFraudes() {
-        return super.getPort(new QName("http://com/aes/service/accounts/CardStatusInquiry", "WSHttpBinding_IConsultarFraudes"), IConsultarFraudes.class);
+        return super.getPort(new QName("http://tempuri.org/", "WSHttpBinding_IConsultarFraudes"), IConsultarFraudes.class);
     }
 
     /**
@@ -65,7 +65,7 @@ public class ConsultarFraudes
      */
     @WebEndpoint(name = "WSHttpBinding_IConsultarFraudes")
     public IConsultarFraudes getWSHttpBindingIConsultarFraudes(WebServiceFeature... features) {
-        return super.getPort(new QName("http://com/aes/service/accounts/CardStatusInquiry", "WSHttpBinding_IConsultarFraudes"), IConsultarFraudes.class, features);
+        return super.getPort(new QName("http://tempuri.org/", "WSHttpBinding_IConsultarFraudes"), IConsultarFraudes.class, features);
     }
 
 }

@@ -6,6 +6,8 @@ import javax.jws.WebService;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.cxf.annotations.SchemaValidation;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Scope;
 
 import com.aes.service.accounts.model.CardStatusModRsType;
@@ -22,6 +24,8 @@ import com.aes.service.accounts.model.StatusType;
         serviceName = "CardFraudulentService", portName = "CardFraudulentPort" )
 @SchemaValidation
 public class CardFraudulentServiceImpl implements CardFraudulentService {
+	
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@Override
 	public ModCardStatusOutput report(ModCardStatusInput modCardStatusRequest) {

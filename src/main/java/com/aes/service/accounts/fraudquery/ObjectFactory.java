@@ -30,83 +30,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link StatusType }
-     * 
-     */
-    public StatusType createStatusType() {
-        return new StatusType();
-    }
-
-    /**
      * Create an instance of {@link ContextRqHdrType }
      * 
      */
     public ContextRqHdrType createContextRqHdrType() {
         return new ContextRqHdrType();
-    }
-
-    /**
-     * Create an instance of {@link GetCardStatusResponse }
-     * 
-     */
-    public GetCardStatusResponse createGetCardStatusResponse() {
-        return new GetCardStatusResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetCardStatus }
-     * 
-     */
-    public GetCardStatus createGetCardStatus() {
-        return new GetCardStatus();
-    }
-
-    /**
-     * Create an instance of {@link CardStatusRecType }
-     * 
-     */
-    public CardStatusRecType createCardStatusRecType() {
-        return new CardStatusRecType();
-    }
-
-    /**
-     * Create an instance of {@link CardStatusInqRsType }
-     * 
-     */
-    public CardStatusInqRsType createCardStatusInqRsType() {
-        return new CardStatusInqRsType();
-    }
-
-    /**
-     * Create an instance of {@link CardStatusType }
-     * 
-     */
-    public CardStatusType createCardStatusType() {
-        return new CardStatusType();
-    }
-
-    /**
-     * Create an instance of {@link CardStatusInqRqType }
-     * 
-     */
-    public CardStatusInqRqType createCardStatusInqRqType() {
-        return new CardStatusInqRqType();
-    }
-
-    /**
-     * Create an instance of {@link CardKeysType }
-     * 
-     */
-    public CardKeysType createCardKeysType() {
-        return new CardKeysType();
-    }
-
-    /**
-     * Create an instance of {@link MsgRqHdrType }
-     * 
-     */
-    public MsgRqHdrType createMsgRqHdrType() {
-        return new MsgRqHdrType();
     }
 
     /**
@@ -118,11 +46,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetCardStatusOut }
+     * Create an instance of {@link CardStatusType }
      * 
      */
-    public GetCardStatusOut createGetCardStatusOut() {
-        return new GetCardStatusOut();
+    public CardStatusType createCardStatusType() {
+        return new CardStatusType();
+    }
+
+    /**
+     * Create an instance of {@link CardKeysType }
+     * 
+     */
+    public CardKeysType createCardKeysType() {
+        return new CardKeysType();
+    }
+
+    /**
+     * Create an instance of {@link CardStatusRecType }
+     * 
+     */
+    public CardStatusRecType createCardStatusRecType() {
+        return new CardStatusRecType();
     }
 
     /**
@@ -131,6 +75,62 @@ public class ObjectFactory {
      */
     public ArrayOfCardKeysType createArrayOfCardKeysType() {
         return new ArrayOfCardKeysType();
+    }
+
+    /**
+     * Create an instance of {@link CardStatusInqRqType }
+     * 
+     */
+    public CardStatusInqRqType createCardStatusInqRqType() {
+        return new CardStatusInqRqType();
+    }
+
+    /**
+     * Create an instance of {@link GetCardStatusResponse }
+     * 
+     */
+    public GetCardStatusResponse createGetCardStatusResponse() {
+        return new GetCardStatusResponse();
+    }
+
+    /**
+     * Create an instance of {@link CardStatusInqRsType }
+     * 
+     */
+    public CardStatusInqRsType createCardStatusInqRsType() {
+        return new CardStatusInqRsType();
+    }
+
+    /**
+     * Create an instance of {@link GetCardStatusOut }
+     * 
+     */
+    public GetCardStatusOut createGetCardStatusOut() {
+        return new GetCardStatusOut();
+    }
+
+    /**
+     * Create an instance of {@link MsgRqHdrType }
+     * 
+     */
+    public MsgRqHdrType createMsgRqHdrType() {
+        return new MsgRqHdrType();
+    }
+
+    /**
+     * Create an instance of {@link StatusType }
+     * 
+     */
+    public StatusType createStatusType() {
+        return new StatusType();
+    }
+
+    /**
+     * Create an instance of {@link GetCardStatus }
+     * 
+     */
+    public GetCardStatus createGetCardStatus() {
+        return new GetCardStatus();
     }
 
 }
