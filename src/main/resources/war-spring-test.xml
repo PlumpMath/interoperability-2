@@ -17,19 +17,7 @@
 
 <!-- 
 	
-	<util:properties id="keystorePropertiesClient">
-		<prop key="org.apache.ws.security.crypto.provider">org.apache.ws.security.components.crypto.Merlin</prop>
-		<prop key="org.apache.ws.security.crypto.merlin.keystore.type">jks</prop>
-		<prop key="org.apache.ws.security.crypto.merlin.keystore.password">nosecret</prop>
-		<prop key="org.apache.ws.security.crypto.merlin.keystore.alias">clientkey</prop>
-		<prop key="org.apache.ws.security.crypto.merlin.file">E:/java/git/jbossews/client.keystore</prop>
-		<prop key="org.apache.ws.security.crypto.merlin.truststore.file">E:/java/git/jbossews/client.keystore</prop>
-		<prop key="org.apache.ws.security.crypto.merlin.truststore.password">nosecret</prop>
-		<prop key="org.apache.ws.security.crypto.merlin.truststore.type">jks</prop>
-	</util:properties>
 	
-	 -->
-
 	<util:properties id="keystorePropertiesClient">
 		<prop key="org.apache.ws.security.crypto.provider">org.apache.ws.security.components.crypto.Merlin</prop>
 		<prop key="org.apache.ws.security.crypto.merlin.keystore.type">jks</prop>
@@ -41,6 +29,20 @@
 		<prop key="org.apache.ws.security.crypto.merlin.truststore.type">jks</prop>
 	</util:properties>
 		
+	
+	 -->
+
+	<util:properties id="keystorePropertiesClient">
+			<prop key="org.apache.ws.security.crypto.provider">org.apache.ws.security.components.crypto.Merlin</prop>
+			<prop key="org.apache.ws.security.crypto.merlin.keystore.type">jks</prop>
+			<prop key="org.apache.ws.security.crypto.merlin.keystore.password">nosecret</prop>
+			<prop key="org.apache.ws.security.crypto.merlin.keystore.alias">clientkey</prop>
+			<prop key="org.apache.ws.security.crypto.merlin.file">E:/java/git/jbossews/client.keystore</prop>
+			<prop key="org.apache.ws.security.crypto.merlin.truststore.file">E:/java/git/jbossews/client.keystore</prop>
+			<prop key="org.apache.ws.security.crypto.merlin.truststore.password">nosecret</prop>
+			<prop key="org.apache.ws.security.crypto.merlin.truststore.type">jks</prop>
+		</util:properties>
+	
 	
 		<!-- 
 		http://jbossews-interoperability.rhcloud.com/services/CardFraudulentServiceV3
