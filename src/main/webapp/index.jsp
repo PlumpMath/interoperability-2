@@ -11,7 +11,7 @@
 		<title>Welcome</title>
 	</head> 
 	<body>
-		<c:url value="/showMessage.html" var="messageUrl" />
-		<a href="${messageUrl}">Click to enter</a>
+		<c:url value="/sample" var="messageUrl" />
+		<a href="${messageUrl}">Consultar Tarjetas Fraudulentas</a>
 	</body>
 </html>

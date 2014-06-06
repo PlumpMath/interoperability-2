@@ -3,16 +3,16 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.aes.service.accounts.integration.ConsultarFraudesTest">
+      <class name="com.aes.service.accounts.integration.CardFraudulentServiceTest">
         <methods>
+          <include name="basicTest"/>
           <include name="springTestContextAfterTestClass"/>
           <include name="springTestContextBeforeTestClass"/>
           <include name="springTestContextBeforeTestMethod"/>
           <include name="springTestContextPrepareTestInstance"/>
           <include name="springTestContextAfterTestMethod"/>
-          <include name="basicTest"/>
         </methods>
-      </class> <!-- com.aes.service.accounts.integration.ConsultarFraudesTest -->
+      </class> <!-- com.aes.service.accounts.integration.CardFraudulentServiceTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

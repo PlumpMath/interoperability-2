@@ -17,7 +17,7 @@
 
 <!-- 
 	
-	<util:properties id="keystoreProperties">
+	<util:properties id="keystorePropertiesClient">
 		<prop key="org.apache.ws.security.crypto.provider">org.apache.ws.security.components.crypto.Merlin</prop>
 		<prop key="org.apache.ws.security.crypto.merlin.keystore.type">jks</prop>
 		<prop key="org.apache.ws.security.crypto.merlin.keystore.password">nosecret</prop>
@@ -30,7 +30,7 @@
 	
 	 -->
 
-	<util:properties id="keystoreProperties">
+	<util:properties id="keystorePropertiesClient">
 		<prop key="org.apache.ws.security.crypto.provider">org.apache.ws.security.components.crypto.Merlin</prop>
 		<prop key="org.apache.ws.security.crypto.merlin.keystore.type">jks</prop>
 		<prop key="org.apache.ws.security.crypto.merlin.keystore.password">nosecret</prop>
@@ -50,11 +50,11 @@
 		address="http://localhost:8181/interoperability/services/CardFraudulentServiceV3" wsdlLocation="/wsdl/services/CardFraudulentV3.wsdl"
 		serviceName="s:CardFraudulentService" endpointName="s:CardFraudulentPort" xmlns:s="http://com/aes/service/accounts/CardFraudulent">
 		<jaxws:properties>			        
-			<entry key="ws-security.encryption.properties" value-ref="keystoreProperties"/>
-			<entry key="ws-security.signature.properties" value-ref="keystoreProperties"/>
-			<entry key="ws-security.encryption.username" value="serverkey"/>			
+			<entry key="ws-security.encryption.properties" value-ref="keystorePropertiesClient"/>
+			<entry key="ws-security.signature.properties" value-ref="keystorePropertiesClient"/>
+			<entry key="ws-security.encryption.username" value="serverkey"/>	
 			 <entry key="ws-security.signature.username" value="clientkey"/>			 
-      		 
+      		  
       		<entry key="ws-security.callback-handler"  value="com.aes.service.accounts.security.ClientCallback"/>
 			
 		</jaxws:properties>
@@ -66,6 +66,9 @@
 		</jaxws:outInterceptors>
 	</jaxws:client>
 	
+
+ 
+	
 	<!--
 	http://25.31.25.12/BancoB_FraudesService/ConsultarFraudes.svc
 	http://localhost:51339/ConsultarFraudes.svc 
@@ -74,8 +77,8 @@
 		address="http://25.31.25.12/BancoB_FraudesService/ConsultarFraudes.svc" wsdlLocation="/wsdl/services/ConsultarFraudes.svc"
 		serviceName="s:ConsultarFraudes" endpointName="s:WSHttpBinding_IConsultarFraudes" xmlns:s="http://tempuri.org/">
 		<jaxws:properties>			        
-			<entry key="ws-security.encryption.properties" value-ref="keystoreProperties"/>
-			<entry key="ws-security.signature.properties" value-ref="keystoreProperties"/>
+			<entry key="ws-security.encryption.properties" value-ref="keystorePropertiesClient"/>
+			<entry key="ws-security.signature.properties" value-ref="keystorePropertiesClient"/>
 			<entry key="ws-security.encryption.username" value="aesserverkey"/>	
 			<!-- 				
 			 <entry key="ws-security.signature.username" value="clientkey"/>			 

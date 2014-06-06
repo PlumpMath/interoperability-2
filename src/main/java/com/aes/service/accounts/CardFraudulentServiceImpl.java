@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Scope;
 
 import com.aes.service.accounts.model.CardStatusModRsType;
+import com.aes.service.accounts.model.CardStatusRecType;
 import com.aes.service.accounts.model.ModCardStatusInput;
 import com.aes.service.accounts.model.ModCardStatusOut;
 import com.aes.service.accounts.model.ModCardStatusOutput;
@@ -29,10 +30,17 @@ public class CardFraudulentServiceImpl implements CardFraudulentService {
 
 	@Override
 	public ModCardStatusOutput report(ModCardStatusInput modCardStatusRequest) {
+		logger.info("==========================={}======================== ",modCardStatusRequest.getModCardStatusInp().getCardStatusModRq().getRqUID());
+		logger.info("========INFORMACIÓN TARJETAS=====");
+		for (CardStatusRecType item : modCardStatusRequest.getModCardStatusInp().getCardStatusModRq().getCardStatusRec()) {
+			logger.info("======NUM_TARJETA:==={}===",item.getCardNum());
+			logger.info("======STATUS_CODE:==={}===",item.getCardStatus().getCardStatusCode());
+			logger.info("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::");
+		}
+		
 		ModCardStatusOutput out = new ModCardStatusOutput();
 		ModCardStatusOut modCardStatusOut =new ModCardStatusOut();
-		out.setModCardStatusOut(modCardStatusOut);
-		
+		out.setModCardStatusOut(modCardStatusOut);		
 		CardStatusModRsType cardStatusModRsType = new CardStatusModRsType();
 		modCardStatusOut.setCardStatusModRs(cardStatusModRsType);	
 		cardStatusModRsType.setRqUID(modCardStatusRequest.getModCardStatusInp().getCardStatusModRq().getRqUID());

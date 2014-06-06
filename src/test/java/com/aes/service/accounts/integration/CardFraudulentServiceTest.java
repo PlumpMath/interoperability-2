@@ -6,6 +6,8 @@ import org.testng.annotations.Test;
 
 import com.aes.service.accounts.CardFraudulentService;
 import com.aes.service.accounts.model.CardStatusModRqType;
+import com.aes.service.accounts.model.CardStatusRecType;
+import com.aes.service.accounts.model.CardStatusType;
 import com.aes.service.accounts.model.ContextRqHdrType;
 import com.aes.service.accounts.model.ModCardStatusInp;
 import com.aes.service.accounts.model.ModCardStatusInput;
@@ -38,6 +40,15 @@ public class CardFraudulentServiceTest extends AbstractTestNGSpringContextTests{
 		ContextRqHdrType value4 = new ContextRqHdrType();
 		value3.setContextRqHdr(value4 );
 		value4.setClientDt("2014-05-21T09:00:00");
+		CardStatusRecType e = new CardStatusRecType();
+		value2.getCardStatusRec().add(e);
+		e.setCardNum("2522355663336633335");
+		CardStatusType value5 = new CardStatusType();
+		e.setCardStatus(value5 );
+		value5.setCardStatusAction("xxx");
+		value5.setCardStatusCode("0");
+		value5.setStatusDesc("xxxx");
+		value5.setStatusReason("ddd");
 		
 		ModCardStatusOutput out=  getPort().report(modCardStatusRequest);
 		System.out.println(out.getModCardStatusOut().getCardStatusModRs().getRqUID());

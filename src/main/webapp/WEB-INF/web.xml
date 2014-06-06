@@ -56,8 +56,8 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	
 	 <security-constraint>
 	    <web-resource-collection>
-	      <web-resource-name>CardFraudulentServiceV2</web-resource-name>
-	      <url-pattern>/services/CardFraudulentServiceV2</url-pattern>
+	      <web-resource-name>CardFraudulentServiceV3</web-resource-name>
+	      <url-pattern>/services/CardFraudulentServiceV3</url-pattern>
 	      <http-method>GET</http-method>
 	    </web-resource-collection>	   
 	     <auth-constraint>
@@ -67,6 +67,22 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
   
    <security-constraint>
 	    <web-resource-collection>
+	      <web-resource-name>CardFraudulentService</web-resource-name>
+	      <url-pattern>/services/CardFraudulentService</url-pattern>
+	      <http-method>GET</http-method>
+	    </web-resource-collection>	   
+	     <auth-constraint>
+	        <role-name>Admin</role-name>
+	    </auth-constraint>
+  </security-constraint>
+  
+ 
+	
+	  
+  <!-- 
+  
+    <security-constraint>
+	    <web-resource-collection>
 	      <web-resource-name>CardFraudulentServiceV2</web-resource-name>
 	      <url-pattern>/services/CardFraudulentServiceV2</url-pattern>
 	      <http-method>POST</http-method>
@@ -75,9 +91,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	      <transport-guarantee>CONFIDENTIAL</transport-guarantee>
 	    </user-data-constraint>	     
   </security-constraint>
-	
-	  
-  <!-- 
+  
 	  <security-constraint>
 	    <web-resource-collection>
 	        <web-resource-name>services</web-resource-name>
